@@ -29,10 +29,8 @@ namespace SistemaBibliotecaOnline
             }
             Console.ReadKey();
 
-            if (MenuPrincipal() == 1) // MenuInicial esta dentro do if se for 1 faz o menu inicial
-            
 
-                Console.ReadKey();
+
         }
 
         /// <summary>
@@ -86,19 +84,32 @@ namespace SistemaBibliotecaOnline
         /// </summary>
         /// <param name="nomeDoLivro"> Nome do Livro pesquisado</param>
         /// <returns> Retorna verdadeiro se o livro estiver livre para alocação</returns>
-        public static bool PesquisaLivroParaAlocacao(string nomeDoLivro)
+        public static bool? PesquisaLivroParaAlocacao( ref string nomeDoLivro)
         {
-            for (int i = 0; i < baseDeLivros.GetLength(0); i++) // Andando dentro da lista  e GetLength(0) representa a dimensão
+            for (int i = 0; i < baseDeLivros.GetLength(0);i++) // Andando dentro da lista  e GetLength(0) representa a dimensão
 
             {
-                if (nomeDoLivro == baseDeLivros[i, 0])// representa a coluna
+                if (CompararNomes(nomeDoLivro,baseDeLivros[i,0] ))
+                    
                 {
                     Console.WriteLine($" O livro: {nomeDoLivro}" +
                         $" pode ser alocado?:{baseDeLivros[i, 1]}");
                     return baseDeLivros[i, 1] == "sim";
                 }
             }
-            return false;
+            Console.WriteLine("Nenhum livro encontrado deseja realizar a busca novamente?");
+            Console.WriteLine("Digite o numero desejado: sim(1) não (0)");
+
+            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
+            
+            if(opcao ==1)
+            {
+                Console.WriteLine("Digite o nome do livro a ser pesquisado:");
+                nomeDoLivro = Console.ReadLine();
+
+                return PesquisaLivroParaAlocacao( ref nomeDoLivro);
+            }
+            return null;
         }
         
         /// <summary>
@@ -109,9 +120,9 @@ namespace SistemaBibliotecaOnline
         {
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
             {
-                if (nomeDolivro == baseDeLivros[i, 0])
+                if (CompararNomes(nomeDolivro, baseDeLivros[i, 0]))
                 {
-                    baseDeLivros[i, 1] = alocar == true? "não": "sim";
+                    baseDeLivros[i, 1] = alocar? "não": "sim";
                 }
             }
             Console.Clear();
@@ -127,7 +138,9 @@ namespace SistemaBibliotecaOnline
             MostrarInicialDoLivro("Alocar um livro:");
 
             var nomeDoLivro = Console.ReadLine();
-            if (PesquisaLivroParaAlocacao(nomeDoLivro))
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomeDoLivro);
+
+            if (resultadoPesquisa !=null && resultadoPesquisa == true)
             {
                 Console.Clear();
                 MostrarSejaBemVindo();
@@ -138,6 +151,10 @@ namespace SistemaBibliotecaOnline
                 MostrarListaDeLivros();
 
                 Console.ReadKey();
+            }
+            if(resultadoPesquisa ==null)
+            {
+                Console.WriteLine("Nenhum Resultado encontrado em nossa base de dados");
             }
         }
          
@@ -159,7 +176,8 @@ namespace SistemaBibliotecaOnline
             MostrarListaDeLivros();
 
             var nomeDoLivro = Console.ReadLine();
-            if (!PesquisaLivroParaAlocacao(nomeDoLivro)) // o if só precisa de uma verdade não precisa fazer a comparação
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomeDoLivro);
+            if (resultadoPesquisa != null && resultadoPesquisa== false)// o if só precisa de uma verdade não precisa fazer a comparação
             {
                 Console.Clear();
                 MostrarSejaBemVindo();
@@ -175,6 +193,10 @@ namespace SistemaBibliotecaOnline
                 Console.ReadKey();
 
             }
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Nenhum Resultado encontrado em nossa base de dados");
+            }
         }
         public static void MostrarInicialDoLivro(string operacao)
         {
@@ -183,6 +205,14 @@ namespace SistemaBibliotecaOnline
 
             Console.WriteLine($"Menu - {operacao}");
             Console.WriteLine("Digite o nome do livro para realizar a operação");
+        }
+        public static bool CompararNomes( string primeiro, string segundo)
+        {
+            if (primeiro.ToLower().Replace(" ", "")
+                    == segundo.ToLower().Replace(" ", ""))
+                return true;
+
+            return false;
         }
     }
 }
