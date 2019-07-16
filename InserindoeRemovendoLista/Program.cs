@@ -19,7 +19,7 @@ namespace InserindoeRemovendoLista
             //Apresentação inicial do nosso sistema
             Console.WriteLine("Iniciando sistema de lista de nome e idade:");
 
-            // Criamos a variavel fora
+            // Criamos a varavel fora
             var escolhaInicial = ApresentaMenuInicial();
 
             //Loop infinito ate que de uma treta
