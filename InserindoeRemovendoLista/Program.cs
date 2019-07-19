@@ -11,7 +11,7 @@ namespace InserindoeRemovendoLista
         static void Main(string[] args)
         {
             //criamos a nossa base de dados inicial
-            string[,] baseDeDados = new string[2, 3];
+            string[,] baseDeDados = new string[2, 5];
 
             // Indicador dos registros realizados em nosso sistema
             int IndiceBaseDeDados = 0;
@@ -19,7 +19,7 @@ namespace InserindoeRemovendoLista
             //Apresentação inicial do nosso sistema
             Console.WriteLine("Iniciando sistema de lista de nome e idade:");
 
-            // Criamos a variavel fora
+            // Criamos a varavel fora
             var escolhaInicial = ApresentaMenuInicial();
 
             //Loop infinito ate que de uma treta
@@ -32,7 +32,8 @@ namespace InserindoeRemovendoLista
                     case "1": { InseriValoresNaLista(ref baseDeDados, ref IndiceBaseDeDados); } break;
                     case "2": { RemoverInformacoes (ref baseDeDados); } break;
                     case "3": { MostrarInformacoes(baseDeDados); } break;
-                    case "4": {
+                    case "4": { MostrarInformacoes(baseDeDados, "true"); } break;
+                    case "5": {
                             //Return dentro do nosso caso de escolha ele sai do nosso meto principal ou metodo que estamos dentro do contexto
                             return;
                         }
@@ -52,7 +53,8 @@ namespace InserindoeRemovendoLista
             Console.WriteLine("1- Inserir um novo registro");
             Console.WriteLine("2- Remover um novo registro");
             Console.WriteLine("3- Listar Informações");
-            Console.WriteLine("4- Sair do sistema");
+            Console.WriteLine("4- Listar as informações desativdas");
+            Console.WriteLine("5- Sair do Sistema");
 
             Console.WriteLine("Digite o numero da opção desejada:");
             return Console.ReadLine();
@@ -87,6 +89,9 @@ namespace InserindoeRemovendoLista
                 //Carregamos a segunda coluna com o valor da idade
                 baseDeDados[i, 2] = idade;
                 // Finalizamos aqui para apenas inserir um registro por vez
+                baseDeDados[i, 3] = "true";
+
+                baseDeDados[i, 4] = DateTime.Now.ToString("dd/MM/yyy HH:mm:ss");
                 break;
             }
             //Informamos para o usuario que finalizou o registro e agora o mesmo irá voltar para o menu incial
@@ -97,17 +102,22 @@ namespace InserindoeRemovendoLista
 
         }
 
-        public static void MostrarInformacoes(string[,] baseDeDados)
+        public static void MostrarInformacoes(string[,] baseDeDados, string MostrarRegistrosNAtivos = "false")
         {
             
            
             Console.WriteLine("Apresentação das informações dentro da base de dados.");
+            if(MostrarRegistrosNAtivos == "true")
+                Console.WriteLine("Registros desativados dentro do sistema");
+
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
+            {
+                if(baseDeDados[i,3] != MostrarRegistrosNAtivos)
                 Console.WriteLine($"ID{baseDeDados[i, 0]}" +
                     $" - Nome: {baseDeDados[i, 1]} " +
                     $"- Idade:{baseDeDados[i, 2]} ");
-            //Finalizamos a operação e indicamos que nao existe mais operações a serem realizadas em nosso metodo
-
+                //Finalizamos a operação e indicamos que nao existe mais operações a serem realizadas em nosso metodo
+            }
             Console.WriteLine("Resultados apresentados com sucesso!");
             Console.WriteLine("Para voltar ao menu inicial informar qualquer tecla");
             Console.ReadKey();
@@ -120,10 +130,13 @@ namespace InserindoeRemovendoLista
             Console.WriteLine("Area de remoção de registro do sistema.");
 
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
-            Console.WriteLine($"ID{baseDeDados[i, 0]}" +
-                    $" - Nome: {baseDeDados[i, 1]} " +
-                    $"- Idade:{baseDeDados[i, 2]} ");
+            {
 
+                if(baseDeDados[i,3] !="false")
+                Console.WriteLine($"ID{baseDeDados[i, 0]}" +
+                        $" - Nome: {baseDeDados[i, 1]} " +
+                        $"- Idade:{baseDeDados[i, 2]} ");
+            }
             Console.WriteLine("Informe o id do registro a ser removido:");
             var id = Console.ReadLine();
 
@@ -131,9 +144,9 @@ namespace InserindoeRemovendoLista
             {
                 if(baseDeDados[i,0] !=null && baseDeDados[i,0] == id)
                 {
-                    baseDeDados[i, 0] = null;
-                    baseDeDados[i, 1] = null;
-                    baseDeDados[i, 2] = null;
+                    baseDeDados[i, 3] = "false";
+                    baseDeDados[i, 4] = DateTime.Now.ToString("dd/MM/yyy HH:mm:ss");
+                  
                 }
             }
             Console.WriteLine("Operações finalizadas.");
@@ -141,15 +154,15 @@ namespace InserindoeRemovendoLista
             Console.ReadKey();
 
         }
-        public static void AumentaTamanhoLista(ref string[,] ListaDeNome)
+        public static void AumentaTamanhoLista(ref string[,] baseDeDados)
         {
             //Verifica se precisa criar uma lista maior
             var limiteDaLista = true;
             //Laço que verifica se existe registro disponivel
-            for (int i = 0; i < ListaDeNome.GetLength(0); i++)
+            for (int i = 0; i < baseDeDados.GetLength(0); i++)
             {
                 //Caso ainda existir registro disponivel ele seta nossa variavel "limiteDaLista" para false
-                if (ListaDeNome[i, 0] == null)
+                if (baseDeDados[i, 0] == null)
                     limiteDaLista = false;
             }
 
@@ -157,17 +170,19 @@ namespace InserindoeRemovendoLista
             if (limiteDaLista)
             {
                 //criamos uma cópia da nossa lista para não perder os valores
-                var listaCopia = ListaDeNome;
+                var listaCopia = baseDeDados;
                 //Aqui Limpamos nossa lista antigas e assinamos novamente com uma lista com mais espaços
-                ListaDeNome = new string[ListaDeNome.GetLength(0) + 5, 3];
+                baseDeDados = new string[baseDeDados.GetLength(0) + 5, 5];
                 //Agora copiamos os registros da nossa lista antiga e passamos para a nossa nova lista
                 for (int i = 0; i < listaCopia.GetLength(0); i++)
                 {
                     //Copiamos a informação do identificador unico
-                    ListaDeNome[i, 0] = listaCopia[i, 0];
+                    baseDeDados[i, 0] = listaCopia[i, 0];
                     //Copiamos a informação do nosso nome
-                    ListaDeNome[i, 1] = listaCopia[i, 1];
-                    ListaDeNome[i, 2] = listaCopia[i, 2];
+                    baseDeDados[i, 1] = listaCopia[i, 1];
+                    baseDeDados[i, 2] = listaCopia[i, 2];
+                    baseDeDados[i, 3] = listaCopia[i, 3];
+                    baseDeDados[i, 4] = listaCopia[i, 4];
                 }
                 //indicamos que neste ponto a lista foi atualizada em seu tamanho.
                 Console.WriteLine("O tamanho da lista foi atualizado.");
