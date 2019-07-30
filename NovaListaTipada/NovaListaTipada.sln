@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovaListaTipada", "NovaListaTipada.csproj", "{FBFFB38F-B349-4987-9079-9F7C0BC34F7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBFFB38F-B349-4987-9079-9F7C0BC34F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBFFB38F-B349-4987-9079-9F7C0BC34F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBFFB38F-B349-4987-9079-9F7C0BC34F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBFFB38F-B349-4987-9079-9F7C0BC34F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AAF0A32-2484-4429-A8CC-C0AF725C727A}
+	EndGlobalSection
+EndGlobal
