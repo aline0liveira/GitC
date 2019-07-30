@@ -1,4 +1,4 @@
-﻿using CadastrosDeLanches.Classes;
+﻿using FormsAluno.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CadastrosDeLanches
+namespace FormsAluno
 {
     public partial class Form1 : Form
     {
@@ -17,18 +17,15 @@ namespace CadastrosDeLanches
         {
             InitializeComponent();
         }
-
-        public List<Lanche> lanches = new List<Lanche>();
-
+        public List<Aluno> aluninhos = new List<Aluno>();
         private void Button1_Click(object sender, EventArgs e)
         {
-            TelaDeCadastro formCad = new TelaDeCadastro();
+            TelaCadastroAluno formCad = new TelaCadastroAluno();
             formCad.ShowDialog();
-            lanches.Add(formCad.novoLanche);
+            aluninhos.Add(formCad.novoAluno);
 
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = lanches;
-
+            dataGridView1.DataSource = aluninhos;
 
         }
     }
