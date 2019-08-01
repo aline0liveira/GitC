@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,6 +43,25 @@ namespace DataGridViewExample
 
                         this.vendasTableAdapter.DeleteQuery(vendasSelect.Id);
                     } break;
+
+
+                case 1:
+                    {
+                        frmEdicaoVendas edicaoVendas = new frmEdicaoVendas();
+                        edicaoVendas.VendasRow = vendasSelect;
+                        edicaoVendas.ShowDialog();
+
+                        /*  this.carrosTableAdapter.UpdateQuery1(
+                              edicaoCarros.CarrosRow.Modelo,
+                              edicaoCarros.CarrosRow.Ano.ToString(),
+                              edicaoCarros.CarrosRow.Marca,
+                              edicaoCarros.CarrosRow.UsuAlt,
+                              DateTime.Now,
+                              edicaoCarros.CarrosRow.Id);*/
+                        this.vendasTableAdapter.Update(edicaoVendas.VendasRow);
+                    }
+                    break;
+
             }
       
             this.vendasTableAdapter.CustomQuery(querysInnerJoinDataSet1.Vendas);

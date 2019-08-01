@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.RestauraCommando = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabelaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.querysInnerJoinDataSet1 = new DataGridViewExample.QuerysInnerJoinDataSet1();
             this.dataTable1TableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.DataTable1TableAdapter();
@@ -37,9 +40,7 @@
             this.tableAdapterManager1 = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.TableAdapterManager();
             this.usuariosTableAdapter1 = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter();
             this.vendasTableAdapter1 = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.VendasTableAdapter();
-            this.RestauraCommando = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tabelaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcasTableAdapter1 = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.MarcasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).BeginInit();
@@ -61,6 +62,33 @@
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // RestauraCommando
+            // 
+            this.RestauraCommando.DataPropertyName = "RestauraCommand";
+            this.RestauraCommando.HeaderText = "RestauraCommand";
+            this.RestauraCommando.MinimumWidth = 6;
+            this.RestauraCommando.Name = "RestauraCommando";
+            this.RestauraCommando.ReadOnly = true;
+            this.RestauraCommando.Width = 125;
+            // 
+            // tabelaDataGridViewTextBoxColumn
+            // 
+            this.tabelaDataGridViewTextBoxColumn.DataPropertyName = "Tabela";
+            this.tabelaDataGridViewTextBoxColumn.HeaderText = "Tabela";
+            this.tabelaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tabelaDataGridViewTextBoxColumn.Name = "tabelaDataGridViewTextBoxColumn";
+            this.tabelaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tabelaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // dataTable1BindingSource
             // 
@@ -97,32 +125,9 @@
             // 
             this.vendasTableAdapter1.ClearBeforeFill = true;
             // 
-            // RestauraCommando
+            // marcasTableAdapter1
             // 
-            this.RestauraCommando.DataPropertyName = "RestauraCommand";
-            this.RestauraCommando.HeaderText = "RestauraCommand";
-            this.RestauraCommando.MinimumWidth = 6;
-            this.RestauraCommando.Name = "RestauraCommando";
-            this.RestauraCommando.ReadOnly = true;
-            this.RestauraCommando.Width = 125;
-            // 
-            // tabelaDataGridViewTextBoxColumn
-            // 
-            this.tabelaDataGridViewTextBoxColumn.DataPropertyName = "Tabela";
-            this.tabelaDataGridViewTextBoxColumn.HeaderText = "Tabela";
-            this.tabelaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tabelaDataGridViewTextBoxColumn.Name = "tabelaDataGridViewTextBoxColumn";
-            this.tabelaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tabelaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
+            this.marcasTableAdapter1.ClearBeforeFill = true;
             // 
             // Lixeira
             // 
@@ -153,5 +158,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn RestauraCommando;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private QuerysInnerJoinDataSet1TableAdapters.MarcasTableAdapter marcasTableAdapter1;
     }
 }

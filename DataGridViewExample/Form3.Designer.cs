@@ -35,6 +35,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.usuariosTableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter();
             this.DeletCommand = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -55,6 +56,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DeletCommand,
+            this.editar,
             this.idDataGridViewTextBoxColumn,
             this.usuarioDataGridViewTextBoxColumn,
             this.ativoDataGridViewCheckBoxColumn,
@@ -103,6 +105,16 @@
             this.DeletCommand.Name = "DeletCommand";
             this.DeletCommand.ReadOnly = true;
             this.DeletCommand.Width = 125;
+            // 
+            // editar
+            // 
+            this.editar.HeaderText = "Editar";
+            this.editar.MinimumWidth = 6;
+            this.editar.Name = "editar";
+            this.editar.ReadOnly = true;
+            this.editar.Text = "Editar";
+            this.editar.UseColumnTextForButtonValue = true;
+            this.editar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -192,6 +204,7 @@
         private System.Windows.Forms.BindingSource usuariosBindingSource;
         private QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter usuariosTableAdapter;
         private System.Windows.Forms.DataGridViewButtonColumn DeletCommand;
+        private System.Windows.Forms.DataGridViewButtonColumn editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usuarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewCheckBoxColumn;

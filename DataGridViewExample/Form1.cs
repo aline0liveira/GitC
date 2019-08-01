@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,7 +35,21 @@ namespace DataGridViewExample
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            frmAdicionar formAdd = new frmAdicionar();
+            formAdd.ShowDialog();
 
+            this.carrosTableAdapter.Insert(
+                formAdd.carrosRow.Modelo,
+                formAdd.carrosRow.Ano,
+                formAdd.carrosRow.Marca,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            // atualiza tabela
+            this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet1.Carros);
         }
 
         private void FrmVendas_Click(object sender, EventArgs e)
@@ -58,13 +74,27 @@ namespace DataGridViewExample
             as DataGridViewExample.QuerysInnerJoinDataSet1.CarrosRow;
 
             switch (e.ColumnIndex)
-            {
+            {   // Coluna Deletar
                 case 0: {
-                        // Esse código ta convertendo toda a linha para uma
+                        // DELETE
 
                         this.carrosTableAdapter.DeleteQuery(carSelect.Id);
                        
                 } break;
+
+                case 1: {
+                        frmEdicaoCarros edicaoCarros = new frmEdicaoCarros();
+                        edicaoCarros.CarrosRow = carSelect;
+                        edicaoCarros.ShowDialog();
+
+                      /*  this.carrosTableAdapter.UpdateQuery1(
+                            edicaoCarros.CarrosRow.Modelo,
+                            edicaoCarros.CarrosRow.Ano.ToString(),
+                            edicaoCarros.CarrosRow.Marca,
+                            edicaoCarros.CarrosRow.UsuAlt,
+                            DateTime.Now,
+                            edicaoCarros.CarrosRow.Id);*/
+                    } break;
             }
 
             this.carrosTableAdapter.CustomQuery(querysInnerJoinDataSet11.Carros);

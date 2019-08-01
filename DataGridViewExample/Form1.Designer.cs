@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.deletCommand = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +67,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.deletCommand,
+            this.editar,
             this.idDataGridViewTextBoxColumn,
             this.modeloDataGridViewTextBoxColumn,
             this.anoDataGridViewTextBoxColumn,
@@ -93,6 +95,16 @@
             this.deletCommand.Name = "deletCommand";
             this.deletCommand.ReadOnly = true;
             this.deletCommand.Width = 125;
+            // 
+            // editar
+            // 
+            this.editar.HeaderText = "Editar";
+            this.editar.MinimumWidth = 6;
+            this.editar.Name = "editar";
+            this.editar.ReadOnly = true;
+            this.editar.Text = "Editar";
+            this.editar.UseColumnTextForButtonValue = true;
+            this.editar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -187,24 +199,26 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 62);
             this.button1.TabIndex = 1;
             this.button1.Text = "Adicionar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // frmMarcas
             // 
+            this.frmMarcas.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.frmMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.frmMarcas.Location = new System.Drawing.Point(153, 10);
             this.frmMarcas.Name = "frmMarcas";
             this.frmMarcas.Size = new System.Drawing.Size(135, 65);
             this.frmMarcas.TabIndex = 2;
             this.frmMarcas.Text = "Marcas";
-            this.frmMarcas.UseVisualStyleBackColor = true;
+            this.frmMarcas.UseVisualStyleBackColor = false;
             this.frmMarcas.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button2
@@ -219,35 +233,38 @@
             // 
             // frmUsuario
             // 
+            this.frmUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.frmUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.frmUsuario.Location = new System.Drawing.Point(294, 10);
             this.frmUsuario.Name = "frmUsuario";
-            this.frmUsuario.Size = new System.Drawing.Size(123, 68);
+            this.frmUsuario.Size = new System.Drawing.Size(123, 64);
             this.frmUsuario.TabIndex = 3;
             this.frmUsuario.Text = "Usuarios";
-            this.frmUsuario.UseVisualStyleBackColor = true;
+            this.frmUsuario.UseVisualStyleBackColor = false;
             this.frmUsuario.Click += new System.EventHandler(this.FrmVendas_Click);
             // 
             // frmVendas
             // 
+            this.frmVendas.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.frmVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.frmVendas.Location = new System.Drawing.Point(423, 7);
+            this.frmVendas.Location = new System.Drawing.Point(423, 10);
             this.frmVendas.Name = "frmVendas";
-            this.frmVendas.Size = new System.Drawing.Size(121, 70);
+            this.frmVendas.Size = new System.Drawing.Size(121, 67);
             this.frmVendas.TabIndex = 4;
             this.frmVendas.Text = "Vendas";
-            this.frmVendas.UseVisualStyleBackColor = true;
+            this.frmVendas.UseVisualStyleBackColor = false;
             this.frmVendas.Click += new System.EventHandler(this.FrmUsuario_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(659, 7);
+            this.button3.Location = new System.Drawing.Point(672, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(116, 70);
             this.button3.TabIndex = 5;
             this.button3.Text = "Lixeira";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // carrosBindingSource
@@ -268,6 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.frmVendas);
@@ -300,7 +318,9 @@
         private System.Windows.Forms.Button frmVendas;
         private QuerysInnerJoinDataSet1 querysInnerJoinDataSet11;
         private System.Windows.Forms.BindingSource carrosBindingSource1;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewButtonColumn deletCommand;
+        private System.Windows.Forms.DataGridViewButtonColumn editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn anoDataGridViewTextBoxColumn;
@@ -310,7 +330,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuAltDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button3;
     }
 }
 

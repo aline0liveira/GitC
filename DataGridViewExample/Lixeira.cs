@@ -40,7 +40,29 @@ namespace DataGridViewExample
                     }
                     break;
 
-                
+                case "usuarios":
+                    {
+                        this.usuariosTableAdapter1.UpdateQuery(lixeiraGlobal.Id);
+
+                    }
+                    break;
+
+                case "vendas":
+                    {
+                        this.vendasTableAdapter1.UpdateQuery(lixeiraGlobal.Id);
+
+                    }
+                    break;
+
+               case "marcas":
+                    {
+                       this.marcasTableAdapter1.UpdateQuery(lixeiraGlobal.Id);
+
+                   }
+                    break;
+
+
+
             }
 
             this.dataTable1TableAdapter.GetAllData(this.querysInnerJoinDataSet1.DataTable1);
