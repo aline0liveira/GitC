@@ -38,8 +38,11 @@ namespace DataGridViewExample
             frmAdicionar formAdd = new frmAdicionar();
             formAdd.ShowDialog();
 
-            this.carrosTableAdapter.Insert(
-                formAdd.carrosRow.Modelo,
+
+            //Insert na tabela do banco de dados de carros o novo registro
+            if(!string.IsNullOrEmpty(formAdd.carrosRow?.Modelo)) // interrogação valida se carros é nulo ou nao 
+            this.carrosTableAdapter.Insert(                     // exclamação é pra negar ou seja não vai deixar cadastrar
+                formAdd.carrosRow.Modelo,                       // em branco e vai voltar 
                 formAdd.carrosRow.Ano,
                 formAdd.carrosRow.Marca,
                 true,

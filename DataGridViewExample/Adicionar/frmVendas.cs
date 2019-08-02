@@ -28,12 +28,15 @@ namespace DataGridViewExample.Adicionar
 
         private void Button1_Click(object sender, EventArgs e)
         {
+
+            decimal.TryParse(textBox1.Text, out decimal valor); 
+
             vendasRow  = new Venda
             {
               Carro = (int)comboBox1.SelectedValue,
               Quantidade = (int)numericUpDown1.Value,
-              valor = textBox1.Text
-            };
+              valor = valor
+        };
             this.Close();
         }
     }

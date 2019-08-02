@@ -1,4 +1,5 @@
-﻿using DataGridViewExample.Edicao;
+﻿using DataGridViewExample.Adicionar;
+using DataGridViewExample.Edicao;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,6 +63,25 @@ namespace DataGridViewExample
            
         
             this.marcasTableAdapter.CustomQuery(querysInnerJoinDataSet1.Marcas);
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAddMarcas formAdd = new frmAddMarcas();
+            formAdd.ShowDialog();
+
+            //Insert na tabela do banco de dados de carros o novo registro
+            if (!string.IsNullOrEmpty(formAdd.marcasRow?.Nome))
+                this.marcasTableAdapter.Insert(
+                formAdd.marcasRow.Nome,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            // atualiza tabela
+            this. marcasTableAdapter.Fill(this.querysInnerJoinDataSet1.Marcas);
         }
     }
 }

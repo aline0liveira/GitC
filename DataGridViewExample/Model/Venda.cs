@@ -9,11 +9,11 @@ namespace DataGridViewExample.Model
     public class Venda
     {
 
-        public int Carro { get; set; }
+        public int Carro { get; set; } = 0; // assinando pra ter valor pra comparar
 
-        public int Quantidade { get; set; }
+        public int Quantidade { get; set; } = 0;
 
-        public string valor { get; set; }
+        public decimal valor { get; set; } = 0;
 
         public bool Ativo { get; set; } = true;
 
