@@ -1,6 +1,6 @@
-﻿namespace DataGridViewExample.Edicao
+﻿namespace DataGridViewExample.Adicionar
 {
-    partial class frmEdicaoMarcas
+    partial class frmAddMarcas
     {
         /// <summary>
         /// Required designer variable.
@@ -43,21 +43,23 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(85, 146);
+            this.button1.Location = new System.Drawing.Point(113, 146);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 58);
+            this.button1.Size = new System.Drawing.Size(148, 66);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Salvar";
+            this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 38);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(43, 47);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 25);
+            this.label1.Size = new System.Drawing.Size(72, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nome:";
             // 
@@ -66,9 +68,10 @@
             this.comboBox1.DataSource = this.marcasBindingSource;
             this.comboBox1.DisplayMember = "Nome";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(114, 37);
+            this.comboBox1.Location = new System.Drawing.Point(128, 48);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 2;
             // 
             // marcasBindingSource
@@ -85,18 +88,19 @@
             // 
             this.marcasTableAdapter.ClearBeforeFill = true;
             // 
-            // frmEdicaoMarcas
+            // frmAddMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(340, 233);
+            this.ClientSize = new System.Drawing.Size(357, 255);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Name = "frmEdicaoMarcas";
-            this.Text = "frmEdicaoMarcas";
-            this.Load += new System.EventHandler(this.FrmEdicaoMarcas_Load);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmAddMarcas";
+            this.Text = "frmAddMarcas";
+            this.Load += new System.EventHandler(this.FrmAddMarcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).EndInit();
             this.ResumeLayout(false);

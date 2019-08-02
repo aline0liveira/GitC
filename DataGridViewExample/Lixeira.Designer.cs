@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.RestauraCommando = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tabelaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.querysInnerJoinDataSet1 = new DataGridViewExample.QuerysInnerJoinDataSet1();
             this.dataTable1TableAdapter = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.DataTable1TableAdapter();
@@ -41,6 +38,9 @@
             this.usuariosTableAdapter1 = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter();
             this.vendasTableAdapter1 = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.VendasTableAdapter();
             this.marcasTableAdapter1 = new DataGridViewExample.QuerysInnerJoinDataSet1TableAdapters.MarcasTableAdapter();
+            this.RestauraCommand = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabelaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).BeginInit();
@@ -51,44 +51,17 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.RestauraCommando,
+            this.RestauraCommand,
             this.tabelaDataGridViewTextBoxColumn,
             this.idDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.dataTable1BindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(12, -2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // RestauraCommando
-            // 
-            this.RestauraCommando.DataPropertyName = "RestauraCommand";
-            this.RestauraCommando.HeaderText = "RestauraCommand";
-            this.RestauraCommando.MinimumWidth = 6;
-            this.RestauraCommando.Name = "RestauraCommando";
-            this.RestauraCommando.ReadOnly = true;
-            this.RestauraCommando.Width = 125;
-            // 
-            // tabelaDataGridViewTextBoxColumn
-            // 
-            this.tabelaDataGridViewTextBoxColumn.DataPropertyName = "Tabela";
-            this.tabelaDataGridViewTextBoxColumn.HeaderText = "Tabela";
-            this.tabelaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tabelaDataGridViewTextBoxColumn.Name = "tabelaDataGridViewTextBoxColumn";
-            this.tabelaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tabelaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // dataTable1BindingSource
             // 
@@ -129,6 +102,32 @@
             // 
             this.marcasTableAdapter1.ClearBeforeFill = true;
             // 
+            // RestauraCommand
+            // 
+            this.RestauraCommand.DataPropertyName = "RestauraCommand";
+            this.RestauraCommand.HeaderText = "Restaura";
+            this.RestauraCommand.MinimumWidth = 6;
+            this.RestauraCommand.Name = "RestauraCommand";
+            this.RestauraCommand.Width = 125;
+            // 
+            // tabelaDataGridViewTextBoxColumn
+            // 
+            this.tabelaDataGridViewTextBoxColumn.DataPropertyName = "Tabela";
+            this.tabelaDataGridViewTextBoxColumn.HeaderText = "Tabela";
+            this.tabelaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tabelaDataGridViewTextBoxColumn.Name = "tabelaDataGridViewTextBoxColumn";
+            this.tabelaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tabelaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
             // Lixeira
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -155,9 +154,9 @@
         private QuerysInnerJoinDataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
         private QuerysInnerJoinDataSet1TableAdapters.UsuariosTableAdapter usuariosTableAdapter1;
         private QuerysInnerJoinDataSet1TableAdapters.VendasTableAdapter vendasTableAdapter1;
-        private System.Windows.Forms.DataGridViewButtonColumn RestauraCommando;
+        private QuerysInnerJoinDataSet1TableAdapters.MarcasTableAdapter marcasTableAdapter1;
+        private System.Windows.Forms.DataGridViewButtonColumn RestauraCommand;
         private System.Windows.Forms.DataGridViewTextBoxColumn tabelaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private QuerysInnerJoinDataSet1TableAdapters.MarcasTableAdapter marcasTableAdapter1;
     }
 }
