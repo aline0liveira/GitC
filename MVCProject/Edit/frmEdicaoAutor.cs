@@ -24,8 +24,8 @@ namespace MVCProject.Edit
 
          
 
-            comboBox1.Text = autoresRow.Nome;
-            comboBox1.Text = autoresRow.Descricao;
+           textBox1.Text = autoresRow.Nome;
+           textBox2.Text = autoresRow.Descricao;
 
         }
 
@@ -34,8 +34,8 @@ namespace MVCProject.Edit
             {
              
 
-                autoresRow.Nome = comboBox1.Text;
-                autoresRow.Descricao = comboBox1.Text;
+                autoresRow.Nome = textBox1.Text;
+                autoresRow.Descricao = textBox2.Text;
 
                 this.Close();
             }

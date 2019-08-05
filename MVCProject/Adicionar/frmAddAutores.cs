@@ -29,8 +29,8 @@ namespace MVCProject.Adicionar
         {
             autoresRow = new Autor
             {
-                Nome = comboBox1.Text,
-                Descricao = comboBox2.Text
+                Nome = textBox1.Text,
+                Descricao = textBox2.Text
 
            };
             this.Close();

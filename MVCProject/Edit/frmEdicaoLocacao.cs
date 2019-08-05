@@ -20,13 +20,19 @@ namespace MVCProject.Edit
         public MVCProject.SistemaBibliotecaDBADataSet.LocacaoRow locacaoRow;
         private void FrmEdicaoLocacao_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBDataSet.Usuarios'. Você pode movê-la ou removê-la conforme necessário.
+            this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Usuarios);
+            // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBDataSet.Livros'. Você pode movê-la ou removê-la conforme necessário.
+            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
+            // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBDataSet.Usuarios'. Você pode movê-la ou removê-la conforme necessário.
+            this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Usuarios);
             // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBDataSet.Locacao'. Você pode movê-la ou removê-la conforme necessário.
             this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Locacao);
 
 
             comboBox1.SelectedValue = locacaoRow.Livro;
             comboBox2.SelectedValue = locacaoRow.Usuario;
-            comboBox3.SelectedValue = locacaoRow.Tipo;
+           numericUpDown1.Value = locacaoRow.Tipo;
             dateTimePicker1.Value = locacaoRow.Devolucao;
         }
 
@@ -36,7 +42,7 @@ namespace MVCProject.Edit
 
            locacaoRow.Livro = (int)comboBox1.SelectedValue;
             locacaoRow .Usuario = (int)comboBox2.SelectedValue;
-            locacaoRow .Tipo = (int)comboBox3.SelectedValue;
+            locacaoRow .Tipo = (int)numericUpDown1.Value;
             locacaoRow. Devolucao = dateTimePicker1.Value;
 
             this.Close();

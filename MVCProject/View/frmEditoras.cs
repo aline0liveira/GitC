@@ -30,6 +30,15 @@ namespace MVCProject.View
         {
             frmAddEditoras addEditora = new frmAddEditoras();
             addEditora.ShowDialog();
+
+            // if (!string.IsNullOrEmpty(frmAddAutores.autoresRow?.Registro))
+            this.editorasTableAdapter.Insert(
+            addEditora.editorasRow.Nome,
+            addEditora.editorasRow.Descricao
+
+            );
+            // atualiza tabela
+            this.editorasTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Editoras);
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -65,7 +74,7 @@ namespace MVCProject.View
                     }
                     break;
             }
-            this.editorasTableAdapter.CustomQuery(SistemaBibliotecaDBADataSet.Editoras);
+            this.editorasTableAdapter.CustomQuery(sistemaBibliotecaDBDataSet.Editoras);
         }
     }
 }

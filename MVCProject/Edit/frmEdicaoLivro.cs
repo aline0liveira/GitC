@@ -23,13 +23,13 @@ namespace MVCProject.Edit
             // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBDataSet.Livros'. Você pode movê-la ou removê-la conforme necessário.
             this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
 
-            comboBox6.SelectedValue = livroRow.Registro;
-            comboBox1.Text = livroRow.Titulo;
-            comboBox5.Text = livroRow.Isbn;
-            comboBox2.SelectedValue = livroRow.Genero;
-            comboBox3.SelectedValue = livroRow.Editora;
-            comboBox4.Text = livroRow.Sinopse;
-            comboBox7.Text = livroRow.Observacoes;
+            numericUpDown1.Value = livroRow.Registro;
+            textBox1.Text = livroRow.Titulo;
+            textBox2.Text = livroRow.Isbn;
+            comboBox4.SelectedValue = livroRow.Genero;
+            comboBox5.SelectedValue = livroRow.Editora;
+            textBox3.Text = livroRow.Sinopse;
+            textBox4.Text = livroRow.Observacoes;
 
 
 
@@ -38,13 +38,13 @@ namespace MVCProject.Edit
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            livroRow.Registro = (int)comboBox6.SelectedValue;
-            livroRow.Titulo = comboBox1.Text;
-            livroRow.Isbn = comboBox5.Text;
-            livroRow.Genero = (int)comboBox2.SelectedValue;
-            livroRow.Editora = (int)comboBox3.SelectedValue;
-            livroRow.Sinopse = comboBox4.Text;
-            livroRow.Observacoes = comboBox7.Text;
+            livroRow.Registro = (int)numericUpDown1.Value;
+            livroRow.Titulo = textBox1.Text;
+            livroRow.Isbn =textBox2.Text;
+            livroRow.Genero = (int)comboBox4.SelectedValue;
+            livroRow.Editora = (int)comboBox5.SelectedValue;
+            livroRow.Sinopse = textBox3.Text;
+            livroRow.Observacoes = textBox4.Text;
 
             this.Close();
 

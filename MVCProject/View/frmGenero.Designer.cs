@@ -57,13 +57,13 @@
             this.tipoDataGridViewTextBoxColumn,
             this.descricaoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.generosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 63);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 78);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(595, 302);
+            this.dataGridView1.Size = new System.Drawing.Size(793, 372);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
@@ -71,16 +71,21 @@
             // 
             this.DeletCommand.DataPropertyName = "DeletCommand";
             this.DeletCommand.HeaderText = "Deletar";
+            this.DeletCommand.MinimumWidth = 6;
             this.DeletCommand.Name = "DeletCommand";
             this.DeletCommand.ReadOnly = true;
+            this.DeletCommand.Text = "";
+            this.DeletCommand.Width = 125;
             // 
             // EditarCommand
             // 
             this.EditarCommand.HeaderText = "Editar";
+            this.EditarCommand.MinimumWidth = 6;
             this.EditarCommand.Name = "EditarCommand";
             this.EditarCommand.ReadOnly = true;
             this.EditarCommand.Text = "Editar";
             this.EditarCommand.UseColumnTextForButtonValue = true;
+            this.EditarCommand.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -121,14 +126,15 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.Info;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(2, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(3, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(595, 54);
+            this.button1.Size = new System.Drawing.Size(793, 66);
             this.button1.TabIndex = 1;
             this.button1.Text = "ADICIONAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // generosTableAdapter
@@ -137,12 +143,12 @@
             // 
             // frmGenero
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmGenero";
             this.Text = "Gêneros";
             this.Load += new System.EventHandler(this.FrmGenero_Load);

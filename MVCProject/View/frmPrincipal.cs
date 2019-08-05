@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MVCProject.Adicionar;
+using MVCProject.Model;
 
 namespace MVCProject.View
 {
@@ -16,25 +17,20 @@ namespace MVCProject.View
         public frmPrincipal()
         {
             InitializeComponent();
+
+
+            if (Session.user == null)
+                throw new Exception("Erro critico no sistema");
         }
 
+
+
+      
         private void UsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAddUsuarios formAdd = new frmAddUsuarios();
+            frmUsuarios formAdd = new frmUsuarios();
             formAdd.ShowDialog();
 
-            this.usuariosTableAdapter.Insert(
-                formAdd.carrosRow.Modelo,
-                formAdd.carrosRow.Ano,
-                formAdd.carrosRow.Marca,
-                true,
-                1,
-                1,
-                DateTime.Now,
-                DateTime.Now
-                );
-            // atualiza tabela
-            this.usuariosTableAdapter.Fill(this.s.Carros);
         }
 
         private void AutoresToolStripMenuItem_Click(object sender, EventArgs e)

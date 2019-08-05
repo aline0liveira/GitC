@@ -23,18 +23,18 @@ namespace MVCProject.Edit
             this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Usuarios);
 
 
-            comboBox1.Text = usuariosRow.Nome;
-            comboBox2.Text = usuariosRow.Login;
-            comboBox3.Text = usuariosRow.Senha;
-            comboBox4.Text = usuariosRow.Email;
+            textBox1.Text = usuariosRow.Nome;
+            textBox2.Text = usuariosRow.Login;
+            textBox3.Text = usuariosRow.Senha;
+            textBox4.Text = usuariosRow.Email;
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            usuariosRow.Nome = comboBox1.Text;
-            usuariosRow.Login = comboBox2.Text;
-            usuariosRow.Senha = comboBox3.Text;
-            usuariosRow.Email = comboBox4.Text;
+            usuariosRow.Nome = textBox1.Text;
+            usuariosRow.Login = textBox2.Text;
+            usuariosRow.Senha = textBox3.Text;
+            usuariosRow.Email = textBox4.Text;
 
             this.Close();
         }

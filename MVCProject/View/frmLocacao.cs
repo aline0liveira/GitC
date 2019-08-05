@@ -30,6 +30,24 @@ namespace MVCProject.View
         {
             frmAddLocacao addLocacao = new frmAddLocacao();
             addLocacao.ShowDialog();
+
+
+            // if (!string.IsNullOrEmpty(frmAddAutores.autoresRow?.Registro))
+            this.locacaoTableAdapter.Insert(
+             addLocacao.locacaoRow.Livro,
+            addLocacao.locacaoRow.Usuario,
+            addLocacao.locacaoRow.Tipo,
+            addLocacao.locacaoRow.Devolucao,
+              true,
+              1,
+              1,
+              DateTime.Now,
+              DateTime.Now
+                
+
+            );
+            // atualiza tabela
+            this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Locacao);
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -64,7 +82,7 @@ namespace MVCProject.View
                     }
                     break;
             }
-            this.locacaoTableAdapter.CustomQuery(SistemaBibliotecaDBADataSet.Locacao);
+             this.locacaoTableAdapter.CustomQuerys(sistemaBibliotecaDBDataSet .Locacao);
         }
     }
 }

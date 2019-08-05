@@ -20,6 +20,10 @@ namespace MVCProject.Adicionar
         public Locacao locacaoRow;
         private void FrmAddLocacao_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBADataSet.Livros'. Você pode movê-la ou removê-la conforme necessário.
+            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBADataSet.Livros);
+            // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBADataSet.Usuarios'. Você pode movê-la ou removê-la conforme necessário.
+            this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDBADataSet.Usuarios);
             // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBADataSet.Locacao'. Você pode movê-la ou removê-la conforme necessário.
             this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDBADataSet.Locacao);
 
@@ -32,7 +36,7 @@ namespace MVCProject.Adicionar
 
                 Livro = (int)comboBox1.SelectedValue,
                 Usuario = (int)comboBox2.SelectedValue,
-                Tipo = (int)comboBox3.SelectedValue,
+                Tipo =(int) numericUpDown1.Value,
                 Devolucao = dateTimePicker1.Value
             };
 

@@ -30,6 +30,24 @@ namespace MVCProject.View
         {
             frmAddUsuarios addUsuarios = new frmAddUsuarios();
             addUsuarios.ShowDialog();
+
+
+            // if (!string.IsNullOrEmpty(frmAddAutores.autoresRow?.Registro))
+            this.usuariosTableAdapter.Insert(
+              addUsuarios.usuariosRow.Nome,
+             addUsuarios.usuariosRow.Login,
+             addUsuarios.usuariosRow.Senha,
+            addUsuarios.usuariosRow.Email,
+              true,
+              1,
+              1,
+              DateTime.Now,
+              DateTime.Now
+
+
+            );
+            // atualiza tabela
+            this.usuariosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Usuarios);
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -53,13 +71,7 @@ namespace MVCProject.View
 
                     }
                     break;
-                case 1:
-                    {
-                        // Esse código ta convertendo toda a linha para uma
-
-                        this.usuariosTableAdapter.DeleteQuery(userSelect.Id);
-                    }
-                    break;
+             
 
                 case 1:
                     {
@@ -73,7 +85,7 @@ namespace MVCProject.View
                     }
                     break;
             }
-            this.usuariosTableAdapter.CustomQuery(SistemaBibliotecaDBADataSet.Usuarios);
+             this.usuariosTableAdapter.CustomQuery(sistemaBibliotecaDBDataSet.Usuarios);
         }
     }
 }

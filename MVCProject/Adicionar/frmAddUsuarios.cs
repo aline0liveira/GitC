@@ -30,10 +30,10 @@ namespace MVCProject.Adicionar
             usuariosRow = new Usuario
             {
 
-                Nome = comboBox1.Text,
-                Login = comboBox2.Text,
-                Senha = comboBox3.Text,
-                Email = comboBox4.Text
+                Nome = textBox1.Text,
+                Login = textBox2.Text,
+                Senha =textBox3.Text,
+                Email =textBox4.Text
             };
 
 

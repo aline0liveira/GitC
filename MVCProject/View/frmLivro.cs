@@ -23,6 +23,7 @@ namespace MVCProject.View
         {
             // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBDataSet.Livros'. Você pode movê-la ou removê-la conforme necessário.
             this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
+            this.autoresTableAdapter1.Fill(this.sistemaBibliotecaDBDataSet.Autores);
 
         }
 
@@ -30,6 +31,26 @@ namespace MVCProject.View
         {
             frmAddLivros addLivro = new frmAddLivros();
             addLivro.ShowDialog();
+
+            //Insert na tabela do banco de dados de carros o novo registro
+           // if (!string.IsNullOrEmpty(frmAddLivros.livroRow?.Registro))
+           if(addLivro.livroRow?.Registro >0)
+                this.livrosTableAdapter.Insert(
+                 addLivro.livroRow.Registro,
+                 addLivro.livroRow.Titulo,
+                 addLivro.livroRow.Isbn,
+                 addLivro.livroRow.Genero,
+                 addLivro.livroRow.Editora,
+                 addLivro.livroRow.Sinopse,
+                 addLivro.livroRow.Observacoes,
+                true,
+                1,
+                1,
+                DateTime.Now,
+                DateTime.Now
+                );
+            // atualiza tabela
+            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -42,7 +63,20 @@ namespace MVCProject.View
 
             switch (e.ColumnIndex)
             {
+
+
+
                 case 0:
+                    {
+                        LivroAutor frm = new LivroAutor();
+                        frm.LivrosRow = userSelect;
+                        frm.ShowDialog();
+                    }
+                    break;
+
+            
+
+                case 1:
                     {
                         // DELETE
 
@@ -53,10 +87,9 @@ namespace MVCProject.View
                     }
                     break;
 
-                case 1:
+                case 2:
                     {
                         frmEdicaoLivro edicaoLiv = new frmEdicaoLivro();
-                        edicaoLiv.livroRow = userSelect;
                         edicaoLiv.livroRow = userSelect;
                         edicaoLiv.ShowDialog();
 
@@ -65,7 +98,9 @@ namespace MVCProject.View
                     }
                     break;
             }
-            this.livrosTableAdapter.CustomQuery(SistemaBibliotecaDBADataSet.Livro);
+
+            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
+            this.livrosTableAdapter.CustomQuery(sistemaBibliotecaDBDataSet.Livros);
         }
     }
 }

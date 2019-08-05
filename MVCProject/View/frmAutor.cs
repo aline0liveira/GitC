@@ -36,8 +36,18 @@ namespace MVCProject.View
             switch (e.ColumnIndex)
             {
 
-
                 case 0:
+                    {
+                        // DELETE
+
+                       this.autoresTableAdapter.DeleteQuery(userSelect.Id);
+
+
+
+                    }
+                    break;
+
+                case 1:
                     {
                         frmEdicaoAutor edicaoAut = new frmEdicaoAutor();
                         edicaoAut.autoresRow = userSelect;
@@ -49,13 +59,22 @@ namespace MVCProject.View
                     }
                     break;
             }
-            this.autoresTableAdapter.CustomQuery(SistemaBibliotecaDBADataSet.Autor);
+              this.autoresTableAdapter.CustomQuery(sistemaBibliotecaDBDataSet.Autores);
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             frmAddAutores addAutores = new frmAddAutores();
             addAutores.ShowDialog();
+
+           // if (!string.IsNullOrEmpty(frmAddAutores.autoresRow?.Registro))
+                this.autoresTableAdapter.Insert(
+               addAutores.autoresRow.Nome,
+               addAutores.autoresRow.Descricao
+             
+                );
+            // atualiza tabela
+            this.autoresTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Autores);
         }
     }
 }

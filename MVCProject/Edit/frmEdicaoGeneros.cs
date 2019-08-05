@@ -22,8 +22,8 @@ namespace MVCProject.Edit
             // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBDataSet.Generos'. Você pode movê-la ou removê-la conforme necessário.
             this.generosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Generos);
 
-            comboBox1.Text = generosRow.Tipo;
-            comboBox1.Text = generosRow.Descricao;
+            textBox1.Text = generosRow.Tipo;
+            textBox2.Text = generosRow.Descricao;
 
 
 
@@ -31,8 +31,8 @@ namespace MVCProject.Edit
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            generosRow.Tipo = comboBox1.Text;
-            generosRow.Descricao = comboBox1.Text;
+            generosRow.Tipo = textBox1.Text;
+            generosRow.Descricao = textBox2.Text;
 
             this.Close();
         }

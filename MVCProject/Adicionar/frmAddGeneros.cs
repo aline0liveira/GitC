@@ -29,11 +29,16 @@ namespace MVCProject.Adicionar
         {
             generosRow = new Genero
             {
-                Tipo = comboBox1.Text,
-                Descricao = comboBox2.Text
+                Tipo = textBox1.Text,
+                Descricao = textBox2.Text
 
             };
             this.Close();
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

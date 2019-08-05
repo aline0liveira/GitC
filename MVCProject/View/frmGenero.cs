@@ -30,6 +30,17 @@ namespace MVCProject.View
         {
             frmAddGeneros addGenero = new frmAddGeneros();
             addGenero.ShowDialog();
+
+
+
+            // if (!string.IsNullOrEmpty(frmAddAutores.autoresRow?.Registro))
+            this.generosTableAdapter.Insert(
+            addGenero.generosRow.Tipo,
+            addGenero.generosRow.Descricao
+
+            );
+            // atualiza tabela
+            this.generosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Generos);
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -41,9 +52,18 @@ namespace MVCProject.View
 
             switch (e.ColumnIndex)
             {
-
-
                 case 0:
+                    {
+                        // DELETE
+
+                          this.generosTableAdapter.DeleteQuery(userSelect.Id);
+
+
+
+                    }
+                    break;
+
+                case 1:
                     {
                         frmEdicaoGeneros edicaoGen = new frmEdicaoGeneros();
                         edicaoGen.generosRow = userSelect;
@@ -55,7 +75,7 @@ namespace MVCProject.View
                     }
                     break;
             }
-            this.generosTableAdapter.CustomQuery(SistemaBibliotecaDBADataSet.Genero);
+            this.generosTableAdapter.CustomQuery(sistemaBibliotecaDBDataSet.Generos);
         }
     }
 }
