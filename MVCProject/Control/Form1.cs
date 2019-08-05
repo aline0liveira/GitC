@@ -1,5 +1,4 @@
-﻿using MVCProject.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,13 +15,6 @@ namespace MVCProject
         public Form1()
         {
             InitializeComponent();
-
-         
-        }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

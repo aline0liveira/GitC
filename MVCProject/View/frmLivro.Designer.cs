@@ -30,10 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBDataSet();
-            this.livrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.livrosTableAdapter = new MVCProject.SistemaBibliotecaDBDataSetTableAdapters.LivrosTableAdapter();
+            this.DeletCommand = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.EditarCommand = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.registroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,9 +45,13 @@
             this.usuAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.livrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaBibliotecaDBDataSet = new MVCProject.SistemaBibliotecaDBADataSet();
+            this.button1 = new System.Windows.Forms.Button();
+            this.livrosTableAdapter = new MVCProject.SistemaBibliotecaDBADataSetTableAdapters.LivrosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.livrosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -59,6 +61,8 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DeletCommand,
+            this.EditarCommand,
             this.idDataGridViewTextBoxColumn,
             this.registroDataGridViewTextBoxColumn,
             this.tituloDataGridViewTextBoxColumn,
@@ -73,37 +77,30 @@
             this.datIncDataGridViewTextBoxColumn,
             this.datAltDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.livrosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 116);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 94);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(797, 333);
+            this.dataGridView1.Size = new System.Drawing.Size(598, 271);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
-            // button1
+            // DeletCommand
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(797, 97);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ADICIONAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.DeletCommand.DataPropertyName = "DeletCommand";
+            this.DeletCommand.HeaderText = "Deletar";
+            this.DeletCommand.Name = "DeletCommand";
+            this.DeletCommand.ReadOnly = true;
             // 
-            // sistemaBibliotecaDBDataSet
+            // EditarCommand
             // 
-            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
-            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // livrosBindingSource
-            // 
-            this.livrosBindingSource.DataMember = "Livros";
-            this.livrosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
-            // 
-            // livrosTableAdapter
-            // 
-            this.livrosTableAdapter.ClearBeforeFill = true;
+            this.EditarCommand.HeaderText = "Editar";
+            this.EditarCommand.Name = "EditarCommand";
+            this.EditarCommand.ReadOnly = true;
+            this.EditarCommand.Text = "Editar";
+            this.EditarCommand.UseColumnTextForButtonValue = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -222,19 +219,46 @@
             this.datAltDataGridViewTextBoxColumn.ReadOnly = true;
             this.datAltDataGridViewTextBoxColumn.Width = 125;
             // 
+            // livrosBindingSource
+            // 
+            this.livrosBindingSource.DataMember = "Livros";
+            this.livrosBindingSource.DataSource = this.sistemaBibliotecaDBDataSet;
+            // 
+            // sistemaBibliotecaDBDataSet
+            // 
+            this.sistemaBibliotecaDBDataSet.DataSetName = "SistemaBibliotecaDBDataSet";
+            this.sistemaBibliotecaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(598, 79);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "ADICIONAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // livrosTableAdapter
+            // 
+            this.livrosTableAdapter.ClearBeforeFill = true;
+            // 
             // frmLivro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLivro";
             this.Text = "Livros";
             this.Load += new System.EventHandler(this.FrmLivro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.livrosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,9 +267,11 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private SistemaBibliotecaDBDataSet sistemaBibliotecaDBDataSet;
+        private SistemaBibliotecaDBADataSet sistemaBibliotecaDBDataSet;
         private System.Windows.Forms.BindingSource livrosBindingSource;
-        private SistemaBibliotecaDBDataSetTableAdapters.LivrosTableAdapter livrosTableAdapter;
+        private SistemaBibliotecaDBADataSetTableAdapters.LivrosTableAdapter livrosTableAdapter;
+        private System.Windows.Forms.DataGridViewButtonColumn DeletCommand;
+        private System.Windows.Forms.DataGridViewButtonColumn EditarCommand;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn registroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tituloDataGridViewTextBoxColumn;

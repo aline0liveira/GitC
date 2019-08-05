@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MVCProject.Adicionar;
+using MVCProject.Edit;
 
 namespace MVCProject.View
 {
@@ -26,7 +28,34 @@ namespace MVCProject.View
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            var userSelect = ((System.Data.DataRowView)
+                this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
 
+            as MVCProject.SistemaBibliotecaDBADataSet.AutoresRow;
+
+            switch (e.ColumnIndex)
+            {
+
+
+                case 0:
+                    {
+                        frmEdicaoAutor edicaoAut = new frmEdicaoAutor();
+                        edicaoAut.autoresRow = userSelect;
+                        edicaoAut.autoresRow = userSelect;
+                        edicaoAut.ShowDialog();
+
+
+                        this.autoresTableAdapter.Update(edicaoAut.autoresRow);
+                    }
+                    break;
+            }
+            this.autoresTableAdapter.CustomQuery(SistemaBibliotecaDBADataSet.Autor);
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAddAutores addAutores = new frmAddAutores();
+            addAutores.ShowDialog();
         }
     }
 }

@@ -20,9 +20,9 @@ namespace MVCProject {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("SistemaBibliotecaDBDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("SistemaBibliotecaDBADataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class SistemaBibliotecaDBDataSet : global::System.Data.DataSet {
+    public partial class SistemaBibliotecaDBADataSet : global::System.Data.DataSet {
         
         private AutoresDataTable tableAutores;
         
@@ -38,31 +38,31 @@ namespace MVCProject {
         
         private UsuariosDataTable tableUsuarios;
         
-        private global::System.Data.DataRelation relationFK_LivroAutor_Autores;
+        private global::System.Data.DataRelation relationFK_Livros_To_Editoras;
         
-        private global::System.Data.DataRelation relationFK_LivroAutor_Livros;
+        private global::System.Data.DataRelation relationFK_Livros_To_Generos;
         
-        private global::System.Data.DataRelation relationFK_Livro_Editora;
+        private global::System.Data.DataRelation relationFK_Livros_To_UsuariosAlt;
         
-        private global::System.Data.DataRelation relationFK_Livro_Genero;
-        
-        private global::System.Data.DataRelation relationFK_Livro_UsuarioAlt;
-        
-        private global::System.Data.DataRelation relationFK_Livro_UsuarioInc;
+        private global::System.Data.DataRelation relationFK_Livros_To_UsuariosInc;
         
         private global::System.Data.DataRelation relationFK_Locacao_Livros;
         
         private global::System.Data.DataRelation relationFK_Locacao_UsuAlt;
         
-        private global::System.Data.DataRelation relationFK_Locacao_UsuarioAloc;
+        private global::System.Data.DataRelation relationFK_Locacao_UsuarioALoc;
         
         private global::System.Data.DataRelation relationFK_Locacao_UsuInc;
+        
+        private global::System.Data.DataRelation relationFK_LivroAutor_Livros;
+        
+        private global::System.Data.DataRelation relationFK_LivroAutor_Autores;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public SistemaBibliotecaDBDataSet() {
+        public SistemaBibliotecaDBADataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -73,7 +73,7 @@ namespace MVCProject {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected SistemaBibliotecaDBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected SistemaBibliotecaDBADataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -237,7 +237,7 @@ namespace MVCProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            SistemaBibliotecaDBDataSet cln = ((SistemaBibliotecaDBDataSet)(base.Clone()));
+            SistemaBibliotecaDBADataSet cln = ((SistemaBibliotecaDBADataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -358,24 +358,24 @@ namespace MVCProject {
                     this.tableUsuarios.InitVars();
                 }
             }
-            this.relationFK_LivroAutor_Autores = this.Relations["FK_LivroAutor_Autores"];
-            this.relationFK_LivroAutor_Livros = this.Relations["FK_LivroAutor_Livros"];
-            this.relationFK_Livro_Editora = this.Relations["FK_Livro_Editora"];
-            this.relationFK_Livro_Genero = this.Relations["FK_Livro_Genero"];
-            this.relationFK_Livro_UsuarioAlt = this.Relations["FK_Livro_UsuarioAlt"];
-            this.relationFK_Livro_UsuarioInc = this.Relations["FK_Livro_UsuarioInc"];
+            this.relationFK_Livros_To_Editoras = this.Relations["FK_Livros_To_Editoras"];
+            this.relationFK_Livros_To_Generos = this.Relations["FK_Livros_To_Generos"];
+            this.relationFK_Livros_To_UsuariosAlt = this.Relations["FK_Livros_To_UsuariosAlt"];
+            this.relationFK_Livros_To_UsuariosInc = this.Relations["FK_Livros_To_UsuariosInc"];
             this.relationFK_Locacao_Livros = this.Relations["FK_Locacao_Livros"];
             this.relationFK_Locacao_UsuAlt = this.Relations["FK_Locacao_UsuAlt"];
-            this.relationFK_Locacao_UsuarioAloc = this.Relations["FK_Locacao_UsuarioAloc"];
+            this.relationFK_Locacao_UsuarioALoc = this.Relations["FK_Locacao_UsuarioALoc"];
             this.relationFK_Locacao_UsuInc = this.Relations["FK_Locacao_UsuInc"];
+            this.relationFK_LivroAutor_Livros = this.Relations["FK_LivroAutor_Livros"];
+            this.relationFK_LivroAutor_Autores = this.Relations["FK_LivroAutor_Autores"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "SistemaBibliotecaDBDataSet";
+            this.DataSetName = "SistemaBibliotecaDBADataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/SistemaBibliotecaDBDataSet.xsd";
+            this.Namespace = "http://tempuri.org/SistemaBibliotecaDBADataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableAutores = new AutoresDataTable();
@@ -392,30 +392,22 @@ namespace MVCProject {
             base.Tables.Add(this.tableLocacao);
             this.tableUsuarios = new UsuariosDataTable();
             base.Tables.Add(this.tableUsuarios);
-            this.relationFK_LivroAutor_Autores = new global::System.Data.DataRelation("FK_LivroAutor_Autores", new global::System.Data.DataColumn[] {
-                        this.tableAutores.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLivroAutor.AutorColumn}, false);
-            this.Relations.Add(this.relationFK_LivroAutor_Autores);
-            this.relationFK_LivroAutor_Livros = new global::System.Data.DataRelation("FK_LivroAutor_Livros", new global::System.Data.DataColumn[] {
-                        this.tableLivros.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableLivroAutor.LivroColumn}, false);
-            this.Relations.Add(this.relationFK_LivroAutor_Livros);
-            this.relationFK_Livro_Editora = new global::System.Data.DataRelation("FK_Livro_Editora", new global::System.Data.DataColumn[] {
+            this.relationFK_Livros_To_Editoras = new global::System.Data.DataRelation("FK_Livros_To_Editoras", new global::System.Data.DataColumn[] {
                         this.tableEditoras.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableLivros.EditoraColumn}, false);
-            this.Relations.Add(this.relationFK_Livro_Editora);
-            this.relationFK_Livro_Genero = new global::System.Data.DataRelation("FK_Livro_Genero", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Livros_To_Editoras);
+            this.relationFK_Livros_To_Generos = new global::System.Data.DataRelation("FK_Livros_To_Generos", new global::System.Data.DataColumn[] {
                         this.tableGeneros.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableLivros.GeneroColumn}, false);
-            this.Relations.Add(this.relationFK_Livro_Genero);
-            this.relationFK_Livro_UsuarioAlt = new global::System.Data.DataRelation("FK_Livro_UsuarioAlt", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Livros_To_Generos);
+            this.relationFK_Livros_To_UsuariosAlt = new global::System.Data.DataRelation("FK_Livros_To_UsuariosAlt", new global::System.Data.DataColumn[] {
                         this.tableUsuarios.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableLivros.UsuAltColumn}, false);
-            this.Relations.Add(this.relationFK_Livro_UsuarioAlt);
-            this.relationFK_Livro_UsuarioInc = new global::System.Data.DataRelation("FK_Livro_UsuarioInc", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Livros_To_UsuariosAlt);
+            this.relationFK_Livros_To_UsuariosInc = new global::System.Data.DataRelation("FK_Livros_To_UsuariosInc", new global::System.Data.DataColumn[] {
                         this.tableUsuarios.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableLivros.UsuIncColumn}, false);
-            this.Relations.Add(this.relationFK_Livro_UsuarioInc);
+            this.Relations.Add(this.relationFK_Livros_To_UsuariosInc);
             this.relationFK_Locacao_Livros = new global::System.Data.DataRelation("FK_Locacao_Livros", new global::System.Data.DataColumn[] {
                         this.tableLivros.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableLocacao.LivroColumn}, false);
@@ -424,14 +416,22 @@ namespace MVCProject {
                         this.tableUsuarios.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableLocacao.UsuAltColumn}, false);
             this.Relations.Add(this.relationFK_Locacao_UsuAlt);
-            this.relationFK_Locacao_UsuarioAloc = new global::System.Data.DataRelation("FK_Locacao_UsuarioAloc", new global::System.Data.DataColumn[] {
+            this.relationFK_Locacao_UsuarioALoc = new global::System.Data.DataRelation("FK_Locacao_UsuarioALoc", new global::System.Data.DataColumn[] {
                         this.tableUsuarios.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableLocacao.UsuarioColumn}, false);
-            this.Relations.Add(this.relationFK_Locacao_UsuarioAloc);
+            this.Relations.Add(this.relationFK_Locacao_UsuarioALoc);
             this.relationFK_Locacao_UsuInc = new global::System.Data.DataRelation("FK_Locacao_UsuInc", new global::System.Data.DataColumn[] {
                         this.tableUsuarios.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableLocacao.UsuIncColumn}, false);
             this.Relations.Add(this.relationFK_Locacao_UsuInc);
+            this.relationFK_LivroAutor_Livros = new global::System.Data.DataRelation("FK_LivroAutor_Livros", new global::System.Data.DataColumn[] {
+                        this.tableLivros.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLivroAutor.LivroColumn}, false);
+            this.Relations.Add(this.relationFK_LivroAutor_Livros);
+            this.relationFK_LivroAutor_Autores = new global::System.Data.DataRelation("FK_LivroAutor_Autores", new global::System.Data.DataColumn[] {
+                        this.tableAutores.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableLivroAutor.AutorColumn}, false);
+            this.Relations.Add(this.relationFK_LivroAutor_Autores);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -487,7 +487,7 @@ namespace MVCProject {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            SistemaBibliotecaDBDataSet ds = new SistemaBibliotecaDBDataSet();
+            SistemaBibliotecaDBADataSet ds = new SistemaBibliotecaDBADataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -565,6 +565,8 @@ namespace MVCProject {
             
             private global::System.Data.DataColumn columnDescricao;
             
+            private global::System.Data.DataColumn columnDeleteCommand;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public AutoresDataTable() {
@@ -624,6 +626,14 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DeleteCommandColumn {
+                get {
+                    return this.columnDeleteCommand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -659,12 +669,13 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AutoresRow AddAutoresRow(string Nome, string Descricao) {
+            public AutoresRow AddAutoresRow(string Nome, string Descricao, string DeleteCommand) {
                 AutoresRow rowAutoresRow = ((AutoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nome,
-                        Descricao};
+                        Descricao,
+                        DeleteCommand};
                 rowAutoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAutoresRow);
                 return rowAutoresRow;
@@ -697,6 +708,7 @@ namespace MVCProject {
                 this.columnId = base.Columns["Id"];
                 this.columnNome = base.Columns["Nome"];
                 this.columnDescricao = base.Columns["Descricao"];
+                this.columnDeleteCommand = base.Columns["DeleteCommand"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -708,6 +720,8 @@ namespace MVCProject {
                 base.Columns.Add(this.columnNome);
                 this.columnDescricao = new global::System.Data.DataColumn("Descricao", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescricao);
+                this.columnDeleteCommand = new global::System.Data.DataColumn("DeleteCommand", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeleteCommand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -786,7 +800,7 @@ namespace MVCProject {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SistemaBibliotecaDBDataSet ds = new SistemaBibliotecaDBDataSet();
+                SistemaBibliotecaDBADataSet ds = new SistemaBibliotecaDBADataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -858,6 +872,8 @@ namespace MVCProject {
             
             private global::System.Data.DataColumn columnDescricao;
             
+            private global::System.Data.DataColumn columnDeletCommand;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public EditorasDataTable() {
@@ -917,6 +933,14 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DeletCommandColumn {
+                get {
+                    return this.columnDeletCommand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -952,12 +976,13 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EditorasRow AddEditorasRow(string Nome, string Descricao) {
+            public EditorasRow AddEditorasRow(string Nome, string Descricao, string DeletCommand) {
                 EditorasRow rowEditorasRow = ((EditorasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nome,
-                        Descricao};
+                        Descricao,
+                        DeletCommand};
                 rowEditorasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEditorasRow);
                 return rowEditorasRow;
@@ -990,6 +1015,7 @@ namespace MVCProject {
                 this.columnId = base.Columns["Id"];
                 this.columnNome = base.Columns["Nome"];
                 this.columnDescricao = base.Columns["Descricao"];
+                this.columnDeletCommand = base.Columns["DeletCommand"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1001,6 +1027,8 @@ namespace MVCProject {
                 base.Columns.Add(this.columnNome);
                 this.columnDescricao = new global::System.Data.DataColumn("Descricao", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescricao);
+                this.columnDeletCommand = new global::System.Data.DataColumn("DeletCommand", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeletCommand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1079,7 +1107,7 @@ namespace MVCProject {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SistemaBibliotecaDBDataSet ds = new SistemaBibliotecaDBDataSet();
+                SistemaBibliotecaDBADataSet ds = new SistemaBibliotecaDBADataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1151,6 +1179,8 @@ namespace MVCProject {
             
             private global::System.Data.DataColumn columnDescricao;
             
+            private global::System.Data.DataColumn columnDeletCommand;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public GenerosDataTable() {
@@ -1210,6 +1240,14 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DeletCommandColumn {
+                get {
+                    return this.columnDeletCommand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1245,12 +1283,13 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public GenerosRow AddGenerosRow(string Tipo, string Descricao) {
+            public GenerosRow AddGenerosRow(string Tipo, string Descricao, string DeletCommand) {
                 GenerosRow rowGenerosRow = ((GenerosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Tipo,
-                        Descricao};
+                        Descricao,
+                        DeletCommand};
                 rowGenerosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGenerosRow);
                 return rowGenerosRow;
@@ -1283,6 +1322,7 @@ namespace MVCProject {
                 this.columnId = base.Columns["Id"];
                 this.columnTipo = base.Columns["Tipo"];
                 this.columnDescricao = base.Columns["Descricao"];
+                this.columnDeletCommand = base.Columns["DeletCommand"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1294,6 +1334,8 @@ namespace MVCProject {
                 base.Columns.Add(this.columnTipo);
                 this.columnDescricao = new global::System.Data.DataColumn("Descricao", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescricao);
+                this.columnDeletCommand = new global::System.Data.DataColumn("DeletCommand", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeletCommand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1372,7 +1414,7 @@ namespace MVCProject {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SistemaBibliotecaDBDataSet ds = new SistemaBibliotecaDBDataSet();
+                SistemaBibliotecaDBADataSet ds = new SistemaBibliotecaDBADataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1641,7 +1683,7 @@ namespace MVCProject {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SistemaBibliotecaDBDataSet ds = new SistemaBibliotecaDBDataSet();
+                SistemaBibliotecaDBADataSet ds = new SistemaBibliotecaDBADataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1732,6 +1774,8 @@ namespace MVCProject {
             private global::System.Data.DataColumn columnDatInc;
             
             private global::System.Data.DataColumn columnDatAlt;
+            
+            private global::System.Data.DataColumn columnDeletCommand;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1872,6 +1916,14 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DeletCommandColumn {
+                get {
+                    return this.columnDeletCommand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1907,7 +1959,7 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LivrosRow AddLivrosRow(int Registro, string Titulo, string Isbn, GenerosRow parentGenerosRowByFK_Livro_Genero, EditorasRow parentEditorasRowByFK_Livro_Editora, string Sinopse, string Observacoes, bool Ativo, UsuariosRow parentUsuariosRowByFK_Livro_UsuarioInc, UsuariosRow parentUsuariosRowByFK_Livro_UsuarioAlt, System.DateTime DatInc, System.DateTime DatAlt) {
+            public LivrosRow AddLivrosRow(int Registro, string Titulo, string Isbn, GenerosRow parentGenerosRowByFK_Livros_To_Generos, EditorasRow parentEditorasRowByFK_Livros_To_Editoras, string Sinopse, string Observacoes, bool Ativo, UsuariosRow parentUsuariosRowByFK_Livros_To_UsuariosInc, UsuariosRow parentUsuariosRowByFK_Livros_To_UsuariosAlt, System.DateTime DatInc, System.DateTime DatAlt, string DeletCommand) {
                 LivrosRow rowLivrosRow = ((LivrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1922,18 +1974,19 @@ namespace MVCProject {
                         null,
                         null,
                         DatInc,
-                        DatAlt};
-                if ((parentGenerosRowByFK_Livro_Genero != null)) {
-                    columnValuesArray[4] = parentGenerosRowByFK_Livro_Genero[0];
+                        DatAlt,
+                        DeletCommand};
+                if ((parentGenerosRowByFK_Livros_To_Generos != null)) {
+                    columnValuesArray[4] = parentGenerosRowByFK_Livros_To_Generos[0];
                 }
-                if ((parentEditorasRowByFK_Livro_Editora != null)) {
-                    columnValuesArray[5] = parentEditorasRowByFK_Livro_Editora[0];
+                if ((parentEditorasRowByFK_Livros_To_Editoras != null)) {
+                    columnValuesArray[5] = parentEditorasRowByFK_Livros_To_Editoras[0];
                 }
-                if ((parentUsuariosRowByFK_Livro_UsuarioInc != null)) {
-                    columnValuesArray[9] = parentUsuariosRowByFK_Livro_UsuarioInc[0];
+                if ((parentUsuariosRowByFK_Livros_To_UsuariosInc != null)) {
+                    columnValuesArray[9] = parentUsuariosRowByFK_Livros_To_UsuariosInc[0];
                 }
-                if ((parentUsuariosRowByFK_Livro_UsuarioAlt != null)) {
-                    columnValuesArray[10] = parentUsuariosRowByFK_Livro_UsuarioAlt[0];
+                if ((parentUsuariosRowByFK_Livros_To_UsuariosAlt != null)) {
+                    columnValuesArray[10] = parentUsuariosRowByFK_Livros_To_UsuariosAlt[0];
                 }
                 rowLivrosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLivrosRow);
@@ -1977,6 +2030,7 @@ namespace MVCProject {
                 this.columnUsuAlt = base.Columns["UsuAlt"];
                 this.columnDatInc = base.Columns["DatInc"];
                 this.columnDatAlt = base.Columns["DatAlt"];
+                this.columnDeletCommand = base.Columns["DeletCommand"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2008,6 +2062,8 @@ namespace MVCProject {
                 base.Columns.Add(this.columnDatInc);
                 this.columnDatAlt = new global::System.Data.DataColumn("DatAlt", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDatAlt);
+                this.columnDeletCommand = new global::System.Data.DataColumn("DeletCommand", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeletCommand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -2097,7 +2153,7 @@ namespace MVCProject {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SistemaBibliotecaDBDataSet ds = new SistemaBibliotecaDBDataSet();
+                SistemaBibliotecaDBADataSet ds = new SistemaBibliotecaDBADataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2182,6 +2238,8 @@ namespace MVCProject {
             private global::System.Data.DataColumn columnDatInc;
             
             private global::System.Data.DataColumn columnDatAlt;
+            
+            private global::System.Data.DataColumn columnDeletCommand;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2298,6 +2356,14 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DeletCommandColumn {
+                get {
+                    return this.columnDeletCommand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2333,7 +2399,7 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LocacaoRow AddLocacaoRow(LivrosRow parentLivrosRowByFK_Locacao_Livros, UsuariosRow parentUsuariosRowByFK_Locacao_UsuarioAloc, int Tipo, System.DateTime Devolucao, bool Ativo, UsuariosRow parentUsuariosRowByFK_Locacao_UsuInc, UsuariosRow parentUsuariosRowByFK_Locacao_UsuAlt, System.DateTime DatInc, System.DateTime DatAlt) {
+            public LocacaoRow AddLocacaoRow(LivrosRow parentLivrosRowByFK_Locacao_Livros, UsuariosRow parentUsuariosRowByFK_Locacao_UsuarioALoc, int Tipo, System.DateTime Devolucao, bool Ativo, UsuariosRow parentUsuariosRowByFK_Locacao_UsuInc, UsuariosRow parentUsuariosRowByFK_Locacao_UsuAlt, System.DateTime DatInc, System.DateTime DatAlt, string DeletCommand) {
                 LocacaoRow rowLocacaoRow = ((LocacaoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2345,12 +2411,13 @@ namespace MVCProject {
                         null,
                         null,
                         DatInc,
-                        DatAlt};
+                        DatAlt,
+                        DeletCommand};
                 if ((parentLivrosRowByFK_Locacao_Livros != null)) {
                     columnValuesArray[1] = parentLivrosRowByFK_Locacao_Livros[0];
                 }
-                if ((parentUsuariosRowByFK_Locacao_UsuarioAloc != null)) {
-                    columnValuesArray[2] = parentUsuariosRowByFK_Locacao_UsuarioAloc[0];
+                if ((parentUsuariosRowByFK_Locacao_UsuarioALoc != null)) {
+                    columnValuesArray[2] = parentUsuariosRowByFK_Locacao_UsuarioALoc[0];
                 }
                 if ((parentUsuariosRowByFK_Locacao_UsuInc != null)) {
                     columnValuesArray[6] = parentUsuariosRowByFK_Locacao_UsuInc[0];
@@ -2397,6 +2464,7 @@ namespace MVCProject {
                 this.columnUsuAlt = base.Columns["UsuAlt"];
                 this.columnDatInc = base.Columns["DatInc"];
                 this.columnDatAlt = base.Columns["DatAlt"];
+                this.columnDeletCommand = base.Columns["DeletCommand"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2422,6 +2490,8 @@ namespace MVCProject {
                 base.Columns.Add(this.columnDatInc);
                 this.columnDatAlt = new global::System.Data.DataColumn("DatAlt", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDatAlt);
+                this.columnDeletCommand = new global::System.Data.DataColumn("DeletCommand", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeletCommand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -2506,7 +2576,7 @@ namespace MVCProject {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SistemaBibliotecaDBDataSet ds = new SistemaBibliotecaDBDataSet();
+                SistemaBibliotecaDBADataSet ds = new SistemaBibliotecaDBADataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2591,6 +2661,8 @@ namespace MVCProject {
             private global::System.Data.DataColumn columnDatInc;
             
             private global::System.Data.DataColumn columnDatAlt;
+            
+            private global::System.Data.DataColumn columnDeletCommand;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2707,6 +2779,14 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DeletCommandColumn {
+                get {
+                    return this.columnDeletCommand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2742,7 +2822,7 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsuariosRow AddUsuariosRow(string Nome, string Login, string Senha, string Email, bool Ativo, int UsuInc, int UsuAlt, System.DateTime DatInc, System.DateTime DatAlt) {
+            public UsuariosRow AddUsuariosRow(string Nome, string Login, string Senha, string Email, bool Ativo, int UsuInc, int UsuAlt, System.DateTime DatInc, System.DateTime DatAlt, string DeletCommand) {
                 UsuariosRow rowUsuariosRow = ((UsuariosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2754,7 +2834,8 @@ namespace MVCProject {
                         UsuInc,
                         UsuAlt,
                         DatInc,
-                        DatAlt};
+                        DatAlt,
+                        DeletCommand};
                 rowUsuariosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsuariosRow);
                 return rowUsuariosRow;
@@ -2794,6 +2875,7 @@ namespace MVCProject {
                 this.columnUsuAlt = base.Columns["UsuAlt"];
                 this.columnDatInc = base.Columns["DatInc"];
                 this.columnDatAlt = base.Columns["DatAlt"];
+                this.columnDeletCommand = base.Columns["DeletCommand"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2819,6 +2901,8 @@ namespace MVCProject {
                 base.Columns.Add(this.columnDatInc);
                 this.columnDatAlt = new global::System.Data.DataColumn("DatAlt", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDatAlt);
+                this.columnDeletCommand = new global::System.Data.DataColumn("DeletCommand", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDeletCommand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -2907,7 +2991,7 @@ namespace MVCProject {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SistemaBibliotecaDBDataSet ds = new SistemaBibliotecaDBDataSet();
+                SistemaBibliotecaDBADataSet ds = new SistemaBibliotecaDBADataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3020,6 +3104,22 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DeleteCommand {
+                get {
+                    try {
+                        return ((string)(this[this.tableAutores.DeleteCommandColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DeleteCommand\' na tabela \'Autores\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAutores.DeleteCommandColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDescricaoNull() {
                 return this.IsNull(this.tableAutores.DescricaoColumn);
             }
@@ -3028,6 +3128,18 @@ namespace MVCProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDescricaoNull() {
                 this[this.tableAutores.DescricaoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDeleteCommandNull() {
+                return this.IsNull(this.tableAutores.DeleteCommandColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDeleteCommandNull() {
+                this[this.tableAutores.DeleteCommandColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3096,6 +3208,22 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DeletCommand {
+                get {
+                    try {
+                        return ((string)(this[this.tableEditoras.DeletCommandColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DeletCommand\' na tabela \'Editoras\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEditoras.DeletCommandColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDescricaoNull() {
                 return this.IsNull(this.tableEditoras.DescricaoColumn);
             }
@@ -3108,12 +3236,24 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDeletCommandNull() {
+                return this.IsNull(this.tableEditoras.DeletCommandColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDeletCommandNull() {
+                this[this.tableEditoras.DeletCommandColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LivrosRow[] GetLivrosRows() {
-                if ((this.Table.ChildRelations["FK_Livro_Editora"] == null)) {
+                if ((this.Table.ChildRelations["FK_Livros_To_Editoras"] == null)) {
                     return new LivrosRow[0];
                 }
                 else {
-                    return ((LivrosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Livro_Editora"])));
+                    return ((LivrosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Livros_To_Editoras"])));
                 }
             }
         }
@@ -3172,6 +3312,22 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DeletCommand {
+                get {
+                    try {
+                        return ((string)(this[this.tableGeneros.DeletCommandColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DeletCommand\' na tabela \'Generos\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGeneros.DeletCommandColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDescricaoNull() {
                 return this.IsNull(this.tableGeneros.DescricaoColumn);
             }
@@ -3184,12 +3340,24 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDeletCommandNull() {
+                return this.IsNull(this.tableGeneros.DeletCommandColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDeletCommandNull() {
+                this[this.tableGeneros.DeletCommandColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LivrosRow[] GetLivrosRows() {
-                if ((this.Table.ChildRelations["FK_Livro_Genero"] == null)) {
+                if ((this.Table.ChildRelations["FK_Livros_To_Generos"] == null)) {
                     return new LivrosRow[0];
                 }
                 else {
-                    return ((LivrosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Livro_Genero"])));
+                    return ((LivrosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Livros_To_Generos"])));
                 }
             }
         }
@@ -3232,23 +3400,23 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AutoresRow AutoresRow {
-                get {
-                    return ((AutoresRow)(this.GetParentRow(this.Table.ParentRelations["FK_LivroAutor_Autores"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_LivroAutor_Autores"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LivrosRow LivrosRow {
                 get {
                     return ((LivrosRow)(this.GetParentRow(this.Table.ParentRelations["FK_LivroAutor_Livros"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_LivroAutor_Livros"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AutoresRow AutoresRow {
+                get {
+                    return ((AutoresRow)(this.GetParentRow(this.Table.ParentRelations["FK_LivroAutor_Autores"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_LivroAutor_Autores"]);
                 }
             }
         }
@@ -3422,12 +3590,28 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EditorasRow EditorasRow {
+            public string DeletCommand {
                 get {
-                    return ((EditorasRow)(this.GetParentRow(this.Table.ParentRelations["FK_Livro_Editora"])));
+                    try {
+                        return ((string)(this[this.tableLivros.DeletCommandColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DeletCommand\' na tabela \'Livros\' é DBNull.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Livro_Editora"]);
+                    this[this.tableLivros.DeletCommandColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public EditorasRow EditorasRow {
+                get {
+                    return ((EditorasRow)(this.GetParentRow(this.Table.ParentRelations["FK_Livros_To_Editoras"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Livros_To_Editoras"]);
                 }
             }
             
@@ -3435,32 +3619,32 @@ namespace MVCProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public GenerosRow GenerosRow {
                 get {
-                    return ((GenerosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Livro_Genero"])));
+                    return ((GenerosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Livros_To_Generos"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Livro_Genero"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Livros_To_Generos"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsuariosRow UsuariosRowByFK_Livro_UsuarioAlt {
+            public UsuariosRow UsuariosRowByFK_Livros_To_UsuariosAlt {
                 get {
-                    return ((UsuariosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Livro_UsuarioAlt"])));
+                    return ((UsuariosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Livros_To_UsuariosAlt"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Livro_UsuarioAlt"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Livros_To_UsuariosAlt"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsuariosRow UsuariosRowByFK_Livro_UsuarioInc {
+            public UsuariosRow UsuariosRowByFK_Livros_To_UsuariosInc {
                 get {
-                    return ((UsuariosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Livro_UsuarioInc"])));
+                    return ((UsuariosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Livros_To_UsuariosInc"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Livro_UsuarioInc"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Livros_To_UsuariosInc"]);
                 }
             }
             
@@ -3490,13 +3674,14 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LivroAutorRow[] GetLivroAutorRows() {
-                if ((this.Table.ChildRelations["FK_LivroAutor_Livros"] == null)) {
-                    return new LivroAutorRow[0];
-                }
-                else {
-                    return ((LivroAutorRow[])(base.GetChildRows(this.Table.ChildRelations["FK_LivroAutor_Livros"])));
-                }
+            public bool IsDeletCommandNull() {
+                return this.IsNull(this.tableLivros.DeletCommandColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDeletCommandNull() {
+                this[this.tableLivros.DeletCommandColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3507,6 +3692,17 @@ namespace MVCProject {
                 }
                 else {
                     return ((LocacaoRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Locacao_Livros"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public LivroAutorRow[] GetLivroAutorRows() {
+                if ((this.Table.ChildRelations["FK_LivroAutor_Livros"] == null)) {
+                    return new LivroAutorRow[0];
+                }
+                else {
+                    return ((LivroAutorRow[])(base.GetChildRows(this.Table.ChildRelations["FK_LivroAutor_Livros"])));
                 }
             }
         }
@@ -3637,6 +3833,22 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string DeletCommand {
+                get {
+                    try {
+                        return ((string)(this[this.tableLocacao.DeletCommandColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DeletCommand\' na tabela \'Locacao\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLocacao.DeletCommandColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LivrosRow LivrosRow {
                 get {
                     return ((LivrosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Locacao_Livros"])));
@@ -3659,12 +3871,12 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UsuariosRow UsuariosRowByFK_Locacao_UsuarioAloc {
+            public UsuariosRow UsuariosRowByFK_Locacao_UsuarioALoc {
                 get {
-                    return ((UsuariosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Locacao_UsuarioAloc"])));
+                    return ((UsuariosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Locacao_UsuarioALoc"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Locacao_UsuarioAloc"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Locacao_UsuarioALoc"]);
                 }
             }
             
@@ -3677,6 +3889,18 @@ namespace MVCProject {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Locacao_UsuInc"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDeletCommandNull() {
+                return this.IsNull(this.tableLocacao.DeletCommandColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDeletCommandNull() {
+                this[this.tableLocacao.DeletCommandColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3806,23 +4030,51 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LivrosRow[] GetLivrosRowsByFK_Livro_UsuarioAlt() {
-                if ((this.Table.ChildRelations["FK_Livro_UsuarioAlt"] == null)) {
-                    return new LivrosRow[0];
+            public string DeletCommand {
+                get {
+                    try {
+                        return ((string)(this[this.tableUsuarios.DeletCommandColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'DeletCommand\' na tabela \'Usuarios\' é DBNull.", e);
+                    }
                 }
-                else {
-                    return ((LivrosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Livro_UsuarioAlt"])));
+                set {
+                    this[this.tableUsuarios.DeletCommandColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LivrosRow[] GetLivrosRowsByFK_Livro_UsuarioInc() {
-                if ((this.Table.ChildRelations["FK_Livro_UsuarioInc"] == null)) {
+            public bool IsDeletCommandNull() {
+                return this.IsNull(this.tableUsuarios.DeletCommandColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDeletCommandNull() {
+                this[this.tableUsuarios.DeletCommandColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public LivrosRow[] GetLivrosRowsByFK_Livros_To_UsuariosAlt() {
+                if ((this.Table.ChildRelations["FK_Livros_To_UsuariosAlt"] == null)) {
                     return new LivrosRow[0];
                 }
                 else {
-                    return ((LivrosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Livro_UsuarioInc"])));
+                    return ((LivrosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Livros_To_UsuariosAlt"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public LivrosRow[] GetLivrosRowsByFK_Livros_To_UsuariosInc() {
+                if ((this.Table.ChildRelations["FK_Livros_To_UsuariosInc"] == null)) {
+                    return new LivrosRow[0];
+                }
+                else {
+                    return ((LivrosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Livros_To_UsuariosInc"])));
                 }
             }
             
@@ -3839,12 +4091,12 @@ namespace MVCProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LocacaoRow[] GetLocacaoRowsByFK_Locacao_UsuarioAloc() {
-                if ((this.Table.ChildRelations["FK_Locacao_UsuarioAloc"] == null)) {
+            public LocacaoRow[] GetLocacaoRowsByFK_Locacao_UsuarioALoc() {
+                if ((this.Table.ChildRelations["FK_Locacao_UsuarioALoc"] == null)) {
                     return new LocacaoRow[0];
                 }
                 else {
-                    return ((LocacaoRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Locacao_UsuarioAloc"])));
+                    return ((LocacaoRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Locacao_UsuarioALoc"])));
                 }
             }
             
@@ -4099,7 +4351,7 @@ namespace MVCProject {
         }
     }
 }
-namespace MVCProject.SistemaBibliotecaDBDataSetTableAdapters {
+namespace MVCProject.SistemaBibliotecaDBADataSetTableAdapters {
     
     
     /// <summary>
@@ -4262,34 +4514,49 @@ SELECT Id, Nome, Descricao FROM Autores WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBConnectionString;
+            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBAConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Nome, Descricao FROM dbo.Autores";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[Autores] WHERE (([Id] = @Original_Id) AND ([Nome] = @Original_" +
+            this._commandCollection[1].CommandText = "SELECT Id, Nome, Descricao FROM dbo.Autores";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[Autores] WHERE (([Id] = @Original_Id) AND ([Nome] = @Original_" +
                 "Nome) AND ((@IsNull_Descricao = 1 AND [Descricao] IS NULL) OR ([Descricao] = @Or" +
                 "iginal_Descricao)))";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Descricao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Descricao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"UPDATE [dbo].[Autores] SET [Nome] = @Nome, [Descricao] = @Descricao WHERE (([Id] = @Original_Id) AND ([Nome] = @Original_Nome) AND ((@IsNull_Descricao = 1 AND [Descricao] IS NULL) OR ([Descricao] = @Original_Descricao)));
+SELECT Id, Nome, Descricao FROM Autores WHERE (Id = @Id)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Descricao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SistemaBibliotecaDBDataSet.AutoresDataTable dataTable) {
+        public virtual int Fill(SistemaBibliotecaDBADataSet.AutoresDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4302,9 +4569,9 @@ SELECT Id, Nome, Descricao FROM Autores WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SistemaBibliotecaDBDataSet.AutoresDataTable GetData() {
+        public virtual SistemaBibliotecaDBADataSet.AutoresDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SistemaBibliotecaDBDataSet.AutoresDataTable dataTable = new SistemaBibliotecaDBDataSet.AutoresDataTable();
+            SistemaBibliotecaDBADataSet.AutoresDataTable dataTable = new SistemaBibliotecaDBADataSet.AutoresDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4312,14 +4579,38 @@ SELECT Id, Nome, Descricao FROM Autores WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet.AutoresDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int CustomQuery(SistemaBibliotecaDBADataSet.AutoresDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SistemaBibliotecaDBADataSet.AutoresDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            SistemaBibliotecaDBADataSet.AutoresDataTable dataTable = new SistemaBibliotecaDBADataSet.AutoresDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(SistemaBibliotecaDBADataSet.AutoresDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet dataSet) {
+        public virtual int Update(SistemaBibliotecaDBADataSet dataSet) {
             return this.Adapter.Update(dataSet, "Autores");
         }
         
@@ -4469,7 +4760,7 @@ SELECT Id, Nome, Descricao FROM Autores WHERE (Id = @Id)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DeleteQuery(int Original_Id, string Original_Nome, global::System.Nullable<int> IsNull_Descricao, string Original_Descricao) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Nome == null)) {
                 throw new global::System.ArgumentNullException("Original_Nome");
@@ -4489,6 +4780,55 @@ SELECT Id, Nome, Descricao FROM Autores WHERE (Id = @Id)";
             else {
                 command.Parameters[3].Value = ((string)(Original_Descricao));
             }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(string Nome, string Descricao, int Original_Id, string Original_Nome, global::System.Nullable<int> IsNull_Descricao, int Id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((Nome == null)) {
+                throw new global::System.ArgumentNullException("Nome");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Nome));
+            }
+            if ((Descricao == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Descricao));
+            }
+            command.Parameters[2].Value = ((int)(Original_Id));
+            if ((Original_Nome == null)) {
+                throw new global::System.ArgumentNullException("Original_Nome");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Original_Nome));
+            }
+            if ((IsNull_Descricao.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(IsNull_Descricao.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[5].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4667,34 +5007,49 @@ SELECT Id, Nome, Descricao FROM Editoras WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBConnectionString;
+            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBAConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Nome, Descricao FROM dbo.Editoras";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[Editoras] WHERE (([Id] = @Original_Id) AND ([Nome] = @Original" +
+            this._commandCollection[1].CommandText = "SELECT Id, Nome, Descricao FROM dbo.Editoras";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[Editoras] WHERE (([Id] = @Original_Id) AND ([Nome] = @Original" +
                 "_Nome) AND ((@IsNull_Descricao = 1 AND [Descricao] IS NULL) OR ([Descricao] = @O" +
                 "riginal_Descricao)))";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Descricao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Descricao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"UPDATE [dbo].[Editoras] SET [Nome] = @Nome, [Descricao] = @Descricao WHERE (([Id] = @Original_Id) AND ([Nome] = @Original_Nome) AND ((@IsNull_Descricao = 1 AND [Descricao] IS NULL) OR ([Descricao] = @Original_Descricao)));
+SELECT Id, Nome, Descricao FROM Editoras WHERE (Id = @Id)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Descricao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SistemaBibliotecaDBDataSet.EditorasDataTable dataTable) {
+        public virtual int Fill(SistemaBibliotecaDBADataSet.EditorasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4707,9 +5062,9 @@ SELECT Id, Nome, Descricao FROM Editoras WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SistemaBibliotecaDBDataSet.EditorasDataTable GetData() {
+        public virtual SistemaBibliotecaDBADataSet.EditorasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SistemaBibliotecaDBDataSet.EditorasDataTable dataTable = new SistemaBibliotecaDBDataSet.EditorasDataTable();
+            SistemaBibliotecaDBADataSet.EditorasDataTable dataTable = new SistemaBibliotecaDBADataSet.EditorasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4717,14 +5072,38 @@ SELECT Id, Nome, Descricao FROM Editoras WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet.EditorasDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int CustomQuery(SistemaBibliotecaDBADataSet.EditorasDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SistemaBibliotecaDBADataSet.EditorasDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            SistemaBibliotecaDBADataSet.EditorasDataTable dataTable = new SistemaBibliotecaDBADataSet.EditorasDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(SistemaBibliotecaDBADataSet.EditorasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet dataSet) {
+        public virtual int Update(SistemaBibliotecaDBADataSet dataSet) {
             return this.Adapter.Update(dataSet, "Editoras");
         }
         
@@ -4874,7 +5253,7 @@ SELECT Id, Nome, Descricao FROM Editoras WHERE (Id = @Id)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DeleteQuery(int Original_Id, string Original_Nome, global::System.Nullable<int> IsNull_Descricao, string Original_Descricao) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Nome == null)) {
                 throw new global::System.ArgumentNullException("Original_Nome");
@@ -4894,6 +5273,55 @@ SELECT Id, Nome, Descricao FROM Editoras WHERE (Id = @Id)";
             else {
                 command.Parameters[3].Value = ((string)(Original_Descricao));
             }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(string Nome, string Descricao, int Original_Id, string Original_Nome, global::System.Nullable<int> IsNull_Descricao, int Id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((Nome == null)) {
+                throw new global::System.ArgumentNullException("Nome");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Nome));
+            }
+            if ((Descricao == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Descricao));
+            }
+            command.Parameters[2].Value = ((int)(Original_Id));
+            if ((Original_Nome == null)) {
+                throw new global::System.ArgumentNullException("Original_Nome");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Original_Nome));
+            }
+            if ((IsNull_Descricao.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(IsNull_Descricao.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[5].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5072,34 +5500,49 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBConnectionString;
+            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBAConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Tipo, Descricao FROM dbo.Generos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM [dbo].[Generos] WHERE (([Id] = @Original_Id) AND ([Tipo] = @Original_" +
+            this._commandCollection[1].CommandText = "SELECT Id, Tipo, Descricao FROM dbo.Generos";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "DELETE FROM [dbo].[Generos] WHERE (([Id] = @Original_Id) AND ([Tipo] = @Original_" +
                 "Tipo) AND ((@IsNull_Descricao = 1 AND [Descricao] IS NULL) OR ([Descricao] = @Or" +
                 "iginal_Descricao)))";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tipo", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Descricao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tipo", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Descricao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"UPDATE [dbo].[Generos] SET [Tipo] = @Tipo, [Descricao] = @Descricao WHERE (([Id] = @Original_Id) AND ([Tipo] = @Original_Tipo) AND ((@IsNull_Descricao = 1 AND [Descricao] IS NULL) OR ([Descricao] = @Original_Descricao)));
+SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tipo", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Descricao", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SistemaBibliotecaDBDataSet.GenerosDataTable dataTable) {
+        public virtual int Fill(SistemaBibliotecaDBADataSet.GenerosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5112,9 +5555,9 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SistemaBibliotecaDBDataSet.GenerosDataTable GetData() {
+        public virtual SistemaBibliotecaDBADataSet.GenerosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SistemaBibliotecaDBDataSet.GenerosDataTable dataTable = new SistemaBibliotecaDBDataSet.GenerosDataTable();
+            SistemaBibliotecaDBADataSet.GenerosDataTable dataTable = new SistemaBibliotecaDBADataSet.GenerosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5122,14 +5565,38 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet.GenerosDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int CustomQuery(SistemaBibliotecaDBADataSet.GenerosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SistemaBibliotecaDBADataSet.GenerosDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            SistemaBibliotecaDBADataSet.GenerosDataTable dataTable = new SistemaBibliotecaDBADataSet.GenerosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(SistemaBibliotecaDBADataSet.GenerosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet dataSet) {
+        public virtual int Update(SistemaBibliotecaDBADataSet dataSet) {
             return this.Adapter.Update(dataSet, "Generos");
         }
         
@@ -5279,7 +5746,7 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
         public virtual int DeleteQuery(int Original_Id, string Original_Tipo, global::System.Nullable<int> IsNull_Descricao, string Original_Descricao) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             command.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Tipo == null)) {
                 throw new global::System.ArgumentNullException("Original_Tipo");
@@ -5299,6 +5766,55 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
             else {
                 command.Parameters[3].Value = ((string)(Original_Descricao));
             }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(string Tipo, string Descricao, int Original_Id, string Original_Tipo, global::System.Nullable<int> IsNull_Descricao, int Id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((Tipo == null)) {
+                throw new global::System.ArgumentNullException("Tipo");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Tipo));
+            }
+            if ((Descricao == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Descricao));
+            }
+            command.Parameters[2].Value = ((int)(Original_Id));
+            if ((Original_Tipo == null)) {
+                throw new global::System.ArgumentNullException("Original_Tipo");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Original_Tipo));
+            }
+            if ((IsNull_Descricao.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(IsNull_Descricao.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[5].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5453,7 +5969,7 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBConnectionString;
+            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBAConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5470,7 +5986,7 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SistemaBibliotecaDBDataSet.LivroAutorDataTable dataTable) {
+        public virtual int Fill(SistemaBibliotecaDBADataSet.LivroAutorDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5483,9 +5999,9 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SistemaBibliotecaDBDataSet.LivroAutorDataTable GetData() {
+        public virtual SistemaBibliotecaDBADataSet.LivroAutorDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SistemaBibliotecaDBDataSet.LivroAutorDataTable dataTable = new SistemaBibliotecaDBDataSet.LivroAutorDataTable();
+            SistemaBibliotecaDBADataSet.LivroAutorDataTable dataTable = new SistemaBibliotecaDBADataSet.LivroAutorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5493,14 +6009,14 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet.LivroAutorDataTable dataTable) {
+        public virtual int Update(SistemaBibliotecaDBADataSet.LivroAutorDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet dataSet) {
+        public virtual int Update(SistemaBibliotecaDBADataSet dataSet) {
             return this.Adapter.Update(dataSet, "LivroAutor");
         }
         
@@ -5749,7 +6265,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBConnectionString;
+            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBAConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5764,7 +6280,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, " +
-                "UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Livros WHERE Ativo = 0";
+                "UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Livros Where Ativo = 0";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -5785,8 +6301,8 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "UPDATE [dbo].[Livros] SET [Registro] = @Registro, [Titulo] = @Titulo, [Isbn] = @I" +
                 "sbn, [Genero] = @Genero, [Editora] = @Editora, [Sinopse] = @Sinopse, [Observacoe" +
-                "s] = @Observacoes, [UsuAlt] = @UsuAlt, [DatAlt] = @DatAlt  FROM Livros WHERE (Id" +
-                " = @Id)";
+                "s] = @Observacoes, [UsuAlt] = @UsuAlt,[DatAlt] = @DatAlt FROM Livros WHERE (Id =" +
+                " @Id)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Registro", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Registro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Titulo", global::System.Data.SqlDbType.VarChar, 1200, global::System.Data.ParameterDirection.Input, 0, 0, "Titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5804,7 +6320,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SistemaBibliotecaDBDataSet.LivrosDataTable dataTable) {
+        public virtual int Fill(SistemaBibliotecaDBADataSet.LivrosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5817,9 +6333,9 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SistemaBibliotecaDBDataSet.LivrosDataTable GetData() {
+        public virtual SistemaBibliotecaDBADataSet.LivrosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SistemaBibliotecaDBDataSet.LivrosDataTable dataTable = new SistemaBibliotecaDBDataSet.LivrosDataTable();
+            SistemaBibliotecaDBADataSet.LivrosDataTable dataTable = new SistemaBibliotecaDBADataSet.LivrosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5828,7 +6344,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int CustomInativeValues(SistemaBibliotecaDBDataSet.LivrosDataTable dataTable) {
+        public virtual int CustomInativeValues(SistemaBibliotecaDBADataSet.LivrosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5841,9 +6357,9 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual SistemaBibliotecaDBDataSet.LivrosDataTable GetDataBy2() {
+        public virtual SistemaBibliotecaDBADataSet.LivrosDataTable GetDataBy2() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            SistemaBibliotecaDBDataSet.LivrosDataTable dataTable = new SistemaBibliotecaDBDataSet.LivrosDataTable();
+            SistemaBibliotecaDBADataSet.LivrosDataTable dataTable = new SistemaBibliotecaDBADataSet.LivrosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5852,7 +6368,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int CustomQuery(SistemaBibliotecaDBDataSet.LivrosDataTable dataTable) {
+        public virtual int CustomQuery(SistemaBibliotecaDBADataSet.LivrosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5865,9 +6381,9 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual SistemaBibliotecaDBDataSet.LivrosDataTable GetDataBy() {
+        public virtual SistemaBibliotecaDBADataSet.LivrosDataTable GetDataBy() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            SistemaBibliotecaDBDataSet.LivrosDataTable dataTable = new SistemaBibliotecaDBDataSet.LivrosDataTable();
+            SistemaBibliotecaDBADataSet.LivrosDataTable dataTable = new SistemaBibliotecaDBADataSet.LivrosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5875,14 +6391,14 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet.LivrosDataTable dataTable) {
+        public virtual int Update(SistemaBibliotecaDBADataSet.LivrosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet dataSet) {
+        public virtual int Update(SistemaBibliotecaDBADataSet dataSet) {
             return this.Adapter.Update(dataSet, "Livros");
         }
         
@@ -6437,7 +6953,7 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBConnectionString;
+            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBAConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6457,7 +6973,7 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAlt" +
-                " FROM dbo.Locacao where Ativo = 1";
+                " FROM dbo.Locacao where Ativo= 1";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -6488,7 +7004,7 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SistemaBibliotecaDBDataSet.LocacaoDataTable dataTable) {
+        public virtual int Fill(SistemaBibliotecaDBADataSet.LocacaoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6501,9 +7017,9 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SistemaBibliotecaDBDataSet.LocacaoDataTable GetData() {
+        public virtual SistemaBibliotecaDBADataSet.LocacaoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SistemaBibliotecaDBDataSet.LocacaoDataTable dataTable = new SistemaBibliotecaDBDataSet.LocacaoDataTable();
+            SistemaBibliotecaDBADataSet.LocacaoDataTable dataTable = new SistemaBibliotecaDBADataSet.LocacaoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6512,7 +7028,7 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int CustomInativeValues(SistemaBibliotecaDBDataSet.LocacaoDataTable dataTable) {
+        public virtual int CustomInativeQuery(SistemaBibliotecaDBADataSet.LocacaoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6525,9 +7041,9 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual SistemaBibliotecaDBDataSet.LocacaoDataTable GetDataBy2() {
+        public virtual SistemaBibliotecaDBADataSet.LocacaoDataTable GetDataBy2() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            SistemaBibliotecaDBDataSet.LocacaoDataTable dataTable = new SistemaBibliotecaDBDataSet.LocacaoDataTable();
+            SistemaBibliotecaDBADataSet.LocacaoDataTable dataTable = new SistemaBibliotecaDBADataSet.LocacaoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6536,7 +7052,7 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int CustomQuerysAtive(SistemaBibliotecaDBDataSet.LocacaoDataTable dataTable) {
+        public virtual int CustomQuerys(SistemaBibliotecaDBADataSet.LocacaoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6549,9 +7065,9 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual SistemaBibliotecaDBDataSet.LocacaoDataTable GetDataBy() {
+        public virtual SistemaBibliotecaDBADataSet.LocacaoDataTable GetDataBy() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            SistemaBibliotecaDBDataSet.LocacaoDataTable dataTable = new SistemaBibliotecaDBDataSet.LocacaoDataTable();
+            SistemaBibliotecaDBADataSet.LocacaoDataTable dataTable = new SistemaBibliotecaDBADataSet.LocacaoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6559,14 +7075,14 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet.LocacaoDataTable dataTable) {
+        public virtual int Update(SistemaBibliotecaDBADataSet.LocacaoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet dataSet) {
+        public virtual int Update(SistemaBibliotecaDBADataSet dataSet) {
             return this.Adapter.Update(dataSet, "Locacao");
         }
         
@@ -7004,7 +7520,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBConnectionString;
+            this._connection.ConnectionString = global::MVCProject.Properties.Settings.Default.SistemaBibliotecaDBAConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7019,7 +7535,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM " +
-                "dbo.Usuarios Where Ativo = 0";
+                "dbo.Usuarios Where  Ativo = 0";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
@@ -7033,14 +7549,14 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "UPDATE [dbo].[Usuarios] SET Ativo = 1 WHERE ([Id] = @Original_Id)";
+            this._commandCollection[4].CommandText = "UPDATE [dbo].[Carros] SET Ativo = 1 WHERE ([Id] = @Original_Id)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "UPDATE [dbo].[Usuarios] SET [Nome] = @Nome, [Login] = @Login, [Senha] = @Senha, [" +
-                "Email] = @Email,[UsuAlt] = @UsuAlt, [DatAlt] = @DatAlt FROM Usuarios WHERE (Id =" +
-                " @Id)";
+                "Email] = @Email, [UsuAlt] = @UsuAlt, [DatAlt] = @DatAlt  FROM Usuarios WHERE (Id" +
+                " = @Id)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Login", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7055,7 +7571,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SistemaBibliotecaDBDataSet.UsuariosDataTable dataTable) {
+        public virtual int Fill(SistemaBibliotecaDBADataSet.UsuariosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7068,9 +7584,9 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SistemaBibliotecaDBDataSet.UsuariosDataTable GetData() {
+        public virtual SistemaBibliotecaDBADataSet.UsuariosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SistemaBibliotecaDBDataSet.UsuariosDataTable dataTable = new SistemaBibliotecaDBDataSet.UsuariosDataTable();
+            SistemaBibliotecaDBADataSet.UsuariosDataTable dataTable = new SistemaBibliotecaDBADataSet.UsuariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7079,7 +7595,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int CustomInativeValues(SistemaBibliotecaDBDataSet.UsuariosDataTable dataTable) {
+        public virtual int CustomInativeQuery(SistemaBibliotecaDBADataSet.UsuariosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7092,9 +7608,9 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual SistemaBibliotecaDBDataSet.UsuariosDataTable GetDataBy2() {
+        public virtual SistemaBibliotecaDBADataSet.UsuariosDataTable GetDataBy2() {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            SistemaBibliotecaDBDataSet.UsuariosDataTable dataTable = new SistemaBibliotecaDBDataSet.UsuariosDataTable();
+            SistemaBibliotecaDBADataSet.UsuariosDataTable dataTable = new SistemaBibliotecaDBADataSet.UsuariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7103,7 +7619,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int CustomQuery(SistemaBibliotecaDBDataSet.UsuariosDataTable dataTable) {
+        public virtual int CustomQuery(SistemaBibliotecaDBADataSet.UsuariosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7116,9 +7632,9 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual SistemaBibliotecaDBDataSet.UsuariosDataTable GetDataBy() {
+        public virtual SistemaBibliotecaDBADataSet.UsuariosDataTable GetDataBy() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
-            SistemaBibliotecaDBDataSet.UsuariosDataTable dataTable = new SistemaBibliotecaDBDataSet.UsuariosDataTable();
+            SistemaBibliotecaDBADataSet.UsuariosDataTable dataTable = new SistemaBibliotecaDBADataSet.UsuariosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7126,14 +7642,14 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet.UsuariosDataTable dataTable) {
+        public virtual int Update(SistemaBibliotecaDBADataSet.UsuariosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SistemaBibliotecaDBDataSet dataSet) {
+        public virtual int Update(SistemaBibliotecaDBADataSet dataSet) {
             return this.Adapter.Update(dataSet, "Usuarios");
         }
         
@@ -7409,9 +7925,14 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(int Original_Id) {
+        public virtual int UpdateQuery(object Original_Id) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
-            command.Parameters[0].Value = ((int)(Original_Id));
+            if ((Original_Id == null)) {
+                throw new global::System.ArgumentNullException("Original_Id");
+            }
+            else {
+                command.Parameters[0].Value = ((object)(Original_Id));
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7709,7 +8230,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(SistemaBibliotecaDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(SistemaBibliotecaDBADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._editorasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Editoras.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -7756,21 +8277,21 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._livroAutorTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.LivroAutor.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._livroAutorTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._locacaoTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Locacao.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._locacaoTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._livroAutorTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.LivroAutor.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._livroAutorTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -7782,7 +8303,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(SistemaBibliotecaDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(SistemaBibliotecaDBADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._editorasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Editoras.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -7824,19 +8345,19 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._livroAutorTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.LivroAutor.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._livroAutorTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._locacaoTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Locacao.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._locacaoTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._livroAutorTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.LivroAutor.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._livroAutorTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -7848,21 +8369,21 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(SistemaBibliotecaDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(SistemaBibliotecaDBADataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._locacaoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Locacao.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._locacaoTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._livroAutorTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.LivroAutor.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._livroAutorTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._locacaoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Locacao.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._locacaoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -7938,7 +8459,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(SistemaBibliotecaDBDataSet dataSet) {
+        public virtual int UpdateAll(SistemaBibliotecaDBADataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
