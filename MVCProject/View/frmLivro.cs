@@ -23,6 +23,8 @@ namespace MVCProject.View
         {
             // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBDataSet.Livros'. Você pode movê-la ou removê-la conforme necessário.
             this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
+            // TODO: esta linha de código carrega dados na tabela 'sistemaBibliotecaDBDataSet.Livros'. Você pode movê-la ou removê-la conforme necessário.
+            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDBDataSet.Livros);
             this.autoresTableAdapter1.Fill(this.sistemaBibliotecaDBDataSet.Autores);
 
         }
@@ -67,32 +69,26 @@ namespace MVCProject.View
 
 
                 case 0:
-                    {
+                    { // Livro AUTOR
                         LivroAutor frm = new LivroAutor();
                         frm.LivrosRow = userSelect;
                         frm.ShowDialog();
                     }
-                    break;
-
-            
+                    break;         
 
                 case 1:
                     {
                         // DELETE
 
                         this.livrosTableAdapter.DeleteQuery(userSelect.Id);
-
-
-
                     }
                     break;
 
                 case 2:
-                    {
+                    { // Editar
                         frmEdicaoLivro edicaoLiv = new frmEdicaoLivro();
                         edicaoLiv.livroRow = userSelect;
                         edicaoLiv.ShowDialog();
-
 
                         this.livrosTableAdapter.Update(edicaoLiv.livroRow);
                     }

@@ -36,17 +36,19 @@
             this.sistemaBibliotecaDBADataSet = new MVCProject.SistemaBibliotecaDBADataSet();
             this.autoresTableAdapter = new MVCProject.SistemaBibliotecaDBADataSetTableAdapters.AutoresTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.livroAutorBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.livroAutorBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.livroAutorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.livroAutorTableAdapter = new MVCProject.SistemaBibliotecaDBADataSetTableAdapters.LivroAutorTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.autoresBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.AutoresNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.livroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.autorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Livro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Autor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autoresNomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBADataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.livroAutorBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.livroAutorBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.livroAutorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource1)).BeginInit();
@@ -102,16 +104,22 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.AutoresNome,
-            this.livroDataGridViewTextBoxColumn,
-            this.autorDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.livroAutorBindingSource1;
+            this.Livro,
+            this.Autor,
+            this.autoresNomeDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.livroAutorBindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(36, 103);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(728, 345);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // livroAutorBindingSource2
+            // 
+            this.livroAutorBindingSource2.DataMember = "LivroAutor";
+            this.livroAutorBindingSource2.DataSource = this.sistemaBibliotecaDBADataSet;
             // 
             // livroAutorBindingSource1
             // 
@@ -143,29 +151,29 @@
             this.autoresBindingSource1.DataMember = "Autores";
             this.autoresBindingSource1.DataSource = this.sistemaBibliotecaDBADataSet;
             // 
-            // AutoresNome
+            // Livro
             // 
-            this.AutoresNome.DataPropertyName = "Nome";
-            this.AutoresNome.HeaderText = "Nome";
-            this.AutoresNome.MinimumWidth = 6;
-            this.AutoresNome.Name = "AutoresNome";
-            this.AutoresNome.Width = 125;
+            this.Livro.DataPropertyName = "Livro";
+            this.Livro.HeaderText = "Livro";
+            this.Livro.MinimumWidth = 6;
+            this.Livro.Name = "Livro";
+            this.Livro.Width = 125;
             // 
-            // livroDataGridViewTextBoxColumn
+            // Autor
             // 
-            this.livroDataGridViewTextBoxColumn.DataPropertyName = "Livro";
-            this.livroDataGridViewTextBoxColumn.HeaderText = "Livro";
-            this.livroDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.livroDataGridViewTextBoxColumn.Name = "livroDataGridViewTextBoxColumn";
-            this.livroDataGridViewTextBoxColumn.Width = 125;
+            this.Autor.DataPropertyName = "Autor";
+            this.Autor.HeaderText = "Autor";
+            this.Autor.MinimumWidth = 6;
+            this.Autor.Name = "Autor";
+            this.Autor.Width = 125;
             // 
-            // autorDataGridViewTextBoxColumn
+            // autoresNomeDataGridViewTextBoxColumn
             // 
-            this.autorDataGridViewTextBoxColumn.DataPropertyName = "Autor";
-            this.autorDataGridViewTextBoxColumn.HeaderText = "Autor";
-            this.autorDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.autorDataGridViewTextBoxColumn.Name = "autorDataGridViewTextBoxColumn";
-            this.autorDataGridViewTextBoxColumn.Width = 125;
+            this.autoresNomeDataGridViewTextBoxColumn.DataPropertyName = "Autores.Nome";
+            this.autoresNomeDataGridViewTextBoxColumn.HeaderText = "Autores.Nome";
+            this.autoresNomeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.autoresNomeDataGridViewTextBoxColumn.Name = "autoresNomeDataGridViewTextBoxColumn";
+            this.autoresNomeDataGridViewTextBoxColumn.Width = 125;
             // 
             // LivroAutor
             // 
@@ -183,6 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDBADataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.livroAutorBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.livroAutorBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.livroAutorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource1)).EndInit();
@@ -205,8 +214,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource livroAutorBindingSource1;
         private System.Windows.Forms.BindingSource autoresBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AutoresNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn livroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn autorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource livroAutorBindingSource2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Livro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Autor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autoresNomeDataGridViewTextBoxColumn;
     }
 }

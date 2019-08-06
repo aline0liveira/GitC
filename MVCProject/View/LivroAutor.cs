@@ -35,5 +35,10 @@ namespace MVCProject.View
 
             this.livroAutorTableAdapter.FillBy(this.sistemaBibliotecaDBADataSet.LivroAutor, LivrosRow.Id);
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
