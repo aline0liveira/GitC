@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fluxograma Biblioteca", "Fluxograma Biblioteca\Fluxograma Biblioteca.csproj", "{841BF01E-93B1-4E4C-8419-68DB6DAE4385}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{841BF01E-93B1-4E4C-8419-68DB6DAE4385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{841BF01E-93B1-4E4C-8419-68DB6DAE4385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{841BF01E-93B1-4E4C-8419-68DB6DAE4385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{841BF01E-93B1-4E4C-8419-68DB6DAE4385}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3AB71DC-9B78-4A60-8305-A1C693BCA07E}
+	EndGlobalSection
+EndGlobal
