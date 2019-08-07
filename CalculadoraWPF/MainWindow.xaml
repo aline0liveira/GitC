@@ -8,10 +8,16 @@
         mc:Ignorable="d"
         Title="Calculadora" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
 
-        <y:ucLogin x:Name="ucLoginForm" loginCorrect="UcLoginForm_loginCorrect"></y:ucLogin>
-        <y:ucCalculator x:Name="ucCalculator" Visibility="Hidden"></y:ucCalculator>
+        <y:ucLogin x:Name="ucLoginForm" loginCorrect="UcLoginForm_loginCorrect" Margin="-25,-31,-0.4,0" Foreground="#FFC35E5E" BorderBrush="Black" OpacityMask="#FFC22121" Background="#41A151B3"/>
+        <y:ucCalculator x:Name="ucCalculator" Visibility="Hidden" Margin="104,0,103.6,-209"/>
 
 
 

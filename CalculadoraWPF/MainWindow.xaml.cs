@@ -25,7 +25,7 @@ namespace CalculadoraWPF
             InitializeComponent();
         }
 
-        private void UcLoginForm_loginCorrect(object sender, EventArgs e)
+        private void UcLoginForm_loginCorrect(object sender, EventArgs e) // Aqui chama calculadora
         {
             ucCalculator.Visibility = Visibility.Visible;
       

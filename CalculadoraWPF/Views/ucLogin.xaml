@@ -7,14 +7,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF92499C" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="133*"/>
             <RowDefinition Height="146*"/>
             <RowDefinition Height="170*"/>
         </Grid.RowDefinitions>
-        <Button Content="Entrar" HorizontalAlignment="Left" Margin="273,19.8,0,0" VerticalAlignment="Top" Width="266" Grid.Row="2" Height="49" Click="Button_Click" FontSize="18" Background="#FFADB2C2"/>
-        <TextBox  Name ="tbxLogin" HorizontalAlignment="Left" Height="69" Margin="126,10.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="530"/>
-        <TextBox  Name ="tbxSenha"  HorizontalAlignment="Left" Height="57" Margin="126,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="530"/>
+        <Button Content="Entrar" HorizontalAlignment="Left" Margin="263,9.8,0,0" VerticalAlignment="Top" Width="356" Grid.Row="2" Height="95" Click="Button_Click" FontSize="36" FontWeight="SemiBold" OpacityMask="#FFF4EFEF" Background="#FFE0DADA"/>
+        <TextBox  Name ="tbxLogin" HorizontalAlignment="Left" Height="69" Margin="237,10.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="419"/>
+        <TextBox  Name ="tbxSenha"  HorizontalAlignment="Left" Height="65" Margin="237,47,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="419"/>
+        <Label Content="Login:" HorizontalAlignment="Left" Margin="112,47,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#FFEBFAF3" RenderTransformOrigin="0.525,0.148"/>
+        <Label Content="Senha:" HorizontalAlignment="Left" Margin="112,10.2,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="36" Foreground="#FFE7FCF3"/>
 
     </Grid>
 </UserControl>
