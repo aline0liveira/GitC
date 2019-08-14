@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style>
+         .field-custom{
+            background-color:#808080;
+            text-align:center;
+            padding: 5px;
+        }
+
+        .right{
+
+               text-align:right;
+        }
+
+        .left{
+               text-align:left;
+        }
+
+        
+            input{
+               height: calc(2.25rem + 2px);
+               padding: .375rem .75rem;
+               font-size: 1rem;
+               line-height: 1.5;
+               color: #495057;
+               background-color: #fff;
+               background-clip: padding-box;
+               border: 1px solid #ced4da;
+               border-radius: .25rem;
+               transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+               height: calc(2.25rem + 2px);
+               padding: .375rem .75rem;
+               font-size: 1rem;
+               line-height: 1.5;
+               color: #495057;
+               background-color: #fff;
+               background-clip: padding-box;
+               border: 1px solid #ced4da;
+               border-radius: .25rem;
+               transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+           }
+             html{
+               background-color:#808080 !important;
+           }
+
+    </style>
+</head>
+<body>
+
+    <!-- https://viacep.com.br/ws/38402100/json -->
+    <div class="container-fluid">
+        <!-- pra deixar em cima  -->
+        <div class="row">
+            <div class="col-md-12" style="background-color:#ff0000; text-align:center;padding:5px;">
+                <input id="Button1" class="col-6 btn btn-info" type="button" value="Pesquisar" /> <!--Botão Pesquisar-->
+            </div>
+         
+        </div>
+        <div class="row">
+
+            <div class="col-md-12 field-custom">
+
+                <div>
+                    <label for="cep" class="col-2">cep:</label> <!--Label do accept--> <!-- o For serve para quando clical na label ir direto pro campo e irtbm da pra colocar em em uma imgem-->
+                    <input type="text" class="col-4" id="cep" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="logradouro" class="col-2">logradouro:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="logradouro" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="complemento" class="col-2">complemento:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="complemento" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="bairro" class="col-2">bairro:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="bairro" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="localidade" class="col-2">localidade:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="localidade" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="uf" class="col-2">uf:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="uf" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="unidade" class="col-2">unidade:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="unidade" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="ibge" class="col-2">ibge:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="ibge" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="gia" class="col-2">gia:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="gia" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="blocbackground" style="background-color:rgba(0,0,0,0.80);
+position: absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;">
+    </div>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+
+    <script>
+
+             $('#blocbackground').hide();
+        $(function () {
+            $('#Button1').click(function () {              
+                $('#blocbackground').show(500);
+
+
+
+                     $(document).ready(function(){
+                        $("button").click(function(){
+                          $.get("https://viacep.com.br/ws/38402100/json/", function(data, status){
+                              alert("Cep: " + cep + "\nStatus: " + status);
+
+                              
+
+                          });
+                        });
+                     });
+
+            });
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/bootstrap-grid.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        .field-custom{
+            background-color:#808080;
+            text-align:center;
+            padding: 5px;
+        }
+
+        .right{
+
+               text-align:right;
+        }
+
+        .left{
+               text-align:left;
+        }
+
+        
+            input{
+               height: calc(2.25rem + 2px);
+               padding: .375rem .75rem;
+               font-size: 1rem;
+               line-height: 1.5;
+               color: #495057;
+               background-color: #fff;
+               background-clip: padding-box;
+               border: 1px solid #ced4da;
+               border-radius: .25rem;
+               transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+               height: calc(2.25rem + 2px);
+               padding: .375rem .75rem;
+               font-size: 1rem;
+               line-height: 1.5;
+               color: #495057;
+               background-color: #fff;
+               background-clip: padding-box;
+               border: 1px solid #ced4da;
+               border-radius: .25rem;
+               transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+           }
+           html{
+               background-color:#808080 !important;
+           }
+
+    </style>
+</head>
+<body>
+    <!-- http://httpbin.org/get -->
+    <div class="container-fluid"> <!-- pra deixar em cima  -->
+        <div class="row">
+            <div class="col-md-12" style="background-color:#ff0000; text-align:center;padding:5px;">
+                <input id="Button1" class="col-6 btn btn-info" type="button" value="Pesquisar" /> <!--Botão Pesquisar-->
+            </div>
+             <div class="col-md-12" style="background-color:#ff6a00; text-align:center;padding:5px;"> <!--O jeito que o botão vai estar-->
+                <input id="Button2" class="col-6 btn btn-info" type="button" value="Apagar" /> <!--Botão Apagar-->
+             </div>
+        </div>
+        <div class="row" >
+        
+            <div class="col-md-12 field-custom">
+
+                <div>
+                    <label for="Accept" class="col-2"> Accept:</label> <!--Label do accept--> <!-- o For serve para quando clical na label ir direto pro campo e irtbm da pra colocar em em uma imgem-->
+                    <input type="text" class="col-4" id="Accept" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="AcceptEncoding" class="col-2">Accept-Encoding:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="AcceptEncoding" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="AcceptLanguage" class="col-2">Accept-Language:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="AcceptLanguage" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="Host" class="col-2">Host:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="Host" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="UpgradeInsecureRequests" class="col-2">Upgrade-Insecure-Requests:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="UpgradeInsecureRequests" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="UserAgent" class="col-2">User-Agent:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="UserAgent" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="origin" class="col-2">origin:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="origin" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+                <div>
+                    <label for="url" class="col-2">url:</label> <!--Label do accept-->
+                    <input type="text" class="col-4" id="url" placeholder="Text content" /> <!-- Caixa de Texto-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="blocbackground"style="background-color:rgba(0,0,0,0.80); 
+position: absolute;
+width:100%;
+height:100%; 
+top:0;
+left:0;">       
+    </div>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="Scripts/jquery-3.4.1.js"></script>
+    <script>
+        $('#blocbackground').hide();
+        $(function () {
+            $('#Button1').click(function () {              
+                    $('#blocbackground').show(500);
+
+                 $.get('http://httpbin.org/get', function (data, textStatus, jqXHR) {
+                     $('#blocbackground').hide();
+
+                     $('#Accept').val(data.headers.Accept);
+                     $('#AcceptEncoding').val(data.headers['Accept-Encoding']);
+                     $('#AcceptLanguage').val(data.headers['Accept-Language']);
+                     $('#Host').val(data.headers['Host']);
+                     $('#UpgradeInsecureRequests').val(data.headers['Upgrade-Insecure-Requests']);
+                     $('#UserAgent').val(data.headers['User-Agent']);
+                     $('#origin').val(data.headers['origin']);
+                     $('#url').val(data.headers['url']);                    
+                    
+                 });
+              });
+        });
+    
+    </script>
+</body>
+</html>
