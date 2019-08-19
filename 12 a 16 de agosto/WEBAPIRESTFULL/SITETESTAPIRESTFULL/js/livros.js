@@ -1,5 +1,8 @@
 
-	jQuery(document).ready(function(){
+    /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
+    jQuery(document).ready(function(){
+		/* Indica que o evento submit do form irá realizar esta ação agora*/
+	
 		jQuery('#bntSalvar').click(function(){
 			 Editing();
 			 
@@ -8,8 +11,12 @@
 			$('#bntCancelar').hide();
 			
 			$('#Id').val("");
-			$('#Nome').val("");
-			$('#Descricao').val("");
+			$('#Registro').val("");
+            $('#Titulo').val("");
+            $('#Isbn').val("");
+            $('#Sinopse').val("");
+            $('#Observacoes').val("");
+            $('#Ativo select').val("true");
 
 		});
 		
@@ -19,8 +26,11 @@
 			$('#bntCancelar').hide();
 			
 			$('#Id').val("");
-			$('#Nome').val("");
-			$('#Descricao').val("");
+			$('#Registro').val("");
+            $('#Titulo').val("");
+            $('#Isbn').val("");
+            $('#Sinopse').val("");
+            $('#Observacoes').val("");
 			$('#Ativo select').val("true");
 		});
 		
@@ -28,14 +38,14 @@
 	});
 	
 	function GetByID(id){
-      //  $('#bntSubmit').hide();
-	//	$('#bntSalvar').show();
+       // $('#bntSubmit').hide();
+		//$('#bntSalvar').show();
 		$('#bntCancelar').show();
 		
         var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Autores/"+id,
+			"url": "http://localhost:59271/Api/Livros/"+id,
 			"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -45,18 +55,24 @@
 	
 			$.ajax(settings).done(function (response) {
 				$('#Id').val(response.Id);
-				$('#Nome').val(response.Nome);
-				$('#Descricao').val(response.Descricao);
+				$('#Registro').val(response.Regitro);
+                $('#Titulo').val(response.Titulo);
+                $('#Isbn').val(response.Isbn);
+                $('#Sinopse').val(response.Sinopse);
+                $('#Observacoes').val(response.Observacoes);
+                $('#Ativo select').val(response.Ativo);
 
 			});
 		
 	}
+
+	
     
     function GetMethod(object){
 			var settings = {
 				"async": true,
 				"crossDomain": true,
-				"url": "http://localhost:59271/Api/Autores",
+				"url": "http://localhost:59271/Api/Livros",
 				"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -76,8 +92,11 @@
 	   $('#tDataGrid').html(  '<tbody>'
 							+ 	'<tr>'
 							+ 		'<th>ID</th>'
-							+ 		'<th>Nome</th>'
-							+ 		'<th>Descrição</th>'
+							+ 		'<th>Registro</th>'
+                            + 		'<th>Titulo</th>'
+                            +       '<th>Isbn</th>'
+                            +       '<th>Sinopse</th>'
+                            +        '<th>Observacoes</th>'
 							+ 		'<th>Ativo</th>'
 							+ 		'<th>Opções</th>'
 							+ 	'</tr>'
@@ -86,8 +105,11 @@
 		$.each(contentValue,function(index,value) {
         var row =     '<tr>'
 						+ '<td>' + value.Id       + '</td>'
-						+ '<td>' + value.Nome    + '</td>'
-						+ '<td>' + value.Descricao   + '</td>'
+						+ '<td>' + value.Regitro    + '</td>'
+                        + '<td>' + value.Titulo  + '</td>'
+                        + '<td>' + value.Isbn  + '</td>'
+                        + '<td>' + value.Sinopse + '</td>'
+                        + '<td>' + value.Observacoes + '</td>'
 						+ '<td>' + value.Ativo    + '</td>'
 						+ '<td>' 
 						+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'

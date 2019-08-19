@@ -1,5 +1,8 @@
 
-	jQuery(document).ready(function(){
+    /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
+    jQuery(document).ready(function(){
+		/* Indica que o evento submit do form irá realizar esta ação agora*/
+		
 		jQuery('#bntSalvar').click(function(){
 			 Editing();
 			 
@@ -8,7 +11,7 @@
 			$('#bntCancelar').hide();
 			
 			$('#Id').val("");
-			$('#Nome').val("");
+			$('#Tipo').val("");
 			$('#Descricao').val("");
 
 		});
@@ -19,7 +22,7 @@
 			$('#bntCancelar').hide();
 			
 			$('#Id').val("");
-			$('#Nome').val("");
+			$('#Tipo').val("");
 			$('#Descricao').val("");
 			$('#Ativo select').val("true");
 		});
@@ -29,13 +32,13 @@
 	
 	function GetByID(id){
       //  $('#bntSubmit').hide();
-	//	$('#bntSalvar').show();
+		//$('#bntSalvar').show();
 		$('#bntCancelar').show();
 		
         var settings = {
 			"async": true,
 			"crossDomain": true,
-			"url": "http://localhost:59271/Api/Autores/"+id,
+			"url": "http://localhost:59271/Api/Generos/"+id,
 			"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -45,18 +48,19 @@
 	
 			$.ajax(settings).done(function (response) {
 				$('#Id').val(response.Id);
-				$('#Nome').val(response.Nome);
+				$('#Tipo').val(response.Tipo);
 				$('#Descricao').val(response.Descricao);
 
 			});
 		
 	}
+	
     
     function GetMethod(object){
 			var settings = {
 				"async": true,
 				"crossDomain": true,
-				"url": "http://localhost:59271/Api/Autores",
+				"url": "http://localhost:59271/Api/Generos",
 				"method": "GET",
 				"headers": {
 					"Content-Type": "application/json",
@@ -76,7 +80,7 @@
 	   $('#tDataGrid').html(  '<tbody>'
 							+ 	'<tr>'
 							+ 		'<th>ID</th>'
-							+ 		'<th>Nome</th>'
+							+ 		'<th>Tipo</th>'
 							+ 		'<th>Descrição</th>'
 							+ 		'<th>Ativo</th>'
 							+ 		'<th>Opções</th>'
@@ -86,7 +90,7 @@
 		$.each(contentValue,function(index,value) {
         var row =     '<tr>'
 						+ '<td>' + value.Id       + '</td>'
-						+ '<td>' + value.Nome    + '</td>'
+						+ '<td>' + value.Tipo   + '</td>'
 						+ '<td>' + value.Descricao   + '</td>'
 						+ '<td>' + value.Ativo    + '</td>'
 						+ '<td>' 

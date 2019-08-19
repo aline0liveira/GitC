@@ -14,47 +14,44 @@ using WEBAPIRESTFULL.Models;
 namespace WEBAPIRESTFULL.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class EditorasController : ApiController
+    public class LocacaoController : ApiController
     {
-
         private BibliotecaContextDB db = new BibliotecaContextDB();
 
-        // GET: api/Editoras
-        public IQueryable<Editoras> GetEditoras()
+        // GET: api/Locacao
+        public IQueryable<Locacao> GetLocacao()
         {
-
-            return db.Editoras.Where(x => x.Ativo == true);
-           
+            return db.Locacao.Where(x => x.Ativo == true);
         }
 
-        // GET: api/Editoras/5
-        [ResponseType(typeof(Editoras))]
-        public IHttpActionResult GetEditoras(int id)
+        // GET: api/Locacao/5
+        [ResponseType(typeof(Locacao))]
+        public IHttpActionResult GetLocacao(int id)
         {
-            Editoras editoras = db.Editoras.Find(id);
-            if (editoras == null)
+            Locacao locacao = db.Locacao.Find(id);
+            if (locacao == null)
             {
                 return NotFound();
             }
 
-            return Ok(editoras);
+            return Ok(locacao);
         }
 
-        // PUT: api/Editoras/5
+        // PUT: api/Locacao/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutEditoras(int id, Editoras editoras)
+        public IHttpActionResult PutLocacao(int id, Locacao locacao)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != editoras.Id)
+            if (id != locacao.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(editoras).State = EntityState.Modified;
+            db.Entry(locacao).State = EntityState.Modified;
 
             try
             {
@@ -62,7 +59,7 @@ namespace WEBAPIRESTFULL.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EditorasExists(id))
+                if (!LocacaoExists(id))
                 {
                     return NotFound();
                 }
@@ -75,36 +72,36 @@ namespace WEBAPIRESTFULL.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Editoras
-       // [ResponseType(typeof(Editoras))]
-        public IHttpActionResult PostEditoras(Editoras editoras)
+        // POST: api/Locacao
+       // [ResponseType(typeof(Locacao))]
+        public IHttpActionResult PostLocacao(Locacao locacao)
         {
             if (!ModelState.IsValid)
             {
-                if (ModelState.Keys.First().ToString() != "editoras.Id")
+                if (ModelState.Keys.First().ToString() != "locacao.Id")
                     return BadRequest(ModelState);
             }
 
-            db.Editoras.Add(editoras);
+            db.Locacao.Add(locacao);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = editoras.Id }, editoras);
+            return CreatedAtRoute("DefaultApi", new { id = locacao.Id }, locacao);
         }
 
-        // DELETE: api/Editoras/5
-        [ResponseType(typeof(Editoras))]
-        public IHttpActionResult DeleteEditoras(int id)
+        // DELETE: api/Locacao/5
+        [ResponseType(typeof(Locacao))]
+        public IHttpActionResult DeleteLocacao(int id)
         {
-            Editoras editoras = db.Editoras.Find(id);
-            if (editoras == null)
+            Locacao locacao = db.Locacao.Find(id);
+            if (locacao == null)
             {
                 return NotFound();
             }
 
-            db.Editoras.Find(id).Ativo = false; 
+            db.Locacao.Find(id).Ativo = false;
             db.SaveChanges();
 
-            return Ok(editoras);
+            return Ok(locacao);
         }
 
         protected override void Dispose(bool disposing)
@@ -116,9 +113,9 @@ namespace WEBAPIRESTFULL.Controllers
             base.Dispose(disposing);
         }
 
-        private bool EditorasExists(int id)
+        private bool LocacaoExists(int id)
         {
-            return db.Editoras.Count(e => e.Id == id) > 0;
+            return db.Locacao.Count(e => e.Id == id) > 0;
         }
     }
 }
