@@ -41,7 +41,7 @@
         function CadastroUsuario() {
             $.ajax({
                 type: 'POST',
-                url: 'http://localhost:62665/Api/Usuarios',
+                url: 'http://localhost:59271/Api/Usuarios',
                 data: JSON.stringify($('#formUsu').serializeArray()),
                 contentType: 'application/json; charset=utf-8',
                 dataType: 'json'
@@ -49,7 +49,7 @@
 
         }
         function GridRefresh() {
-            $.get('http://localhost:62665/Api/values', function (dataApi) {
+            $.get('http://localhost:59271/Api/values', function (dataApi) {
                 $('#exemplo').columns({ data: dataApi });
             });
         }
