@@ -1,8 +1,5 @@
 
-    /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
-    jQuery(document).ready(function(){
-		/* Indica que o evento submit do form irá realizar esta ação agora*/
-		
+	jQuery(document).ready(function(){
 		
 		jQuery('#btnCancelar').click(function(){
 
@@ -57,18 +54,18 @@
 						+ '<td>' 
 						+ 	'<div    class=\'col-md-12\' style=\'float: right;\'>'
 						+ 		'<div    class=\'col-md-6\'>'
-						+ 		'<button class=\'btn btn-block btn-danger col-md-3 btn-delet-event\' type=\'button\' send-post=\'Editoras\'  value=\''+ value.Id +'\'>Remover</button>'
+						+ 			 '<button class=\'btn btn-block btn-danger col-md-3 btn-delet-event\' type=\'button\' send-post=\'Editoras\'  value=\''+ value.Id +'\'>Remover</button>'
 						+ 		'</div>'
 						+ 		'<div     class=\'col-md-6\'>'
-						+ 		'<button  class=\'btn btn-block btn-success col-md-3  btn-editing-event\' send-post=\'Editoras\' value=\''+ value.Id +'\' type=\'button\'\>Editar</button>'
+						+ 				'<button  class=\'btn btn-block btn-success col-md-3  btn-editing-event\' send-post=\'Editoras\' value=\''+ value.Id +'\' type=\'button\'\>Editar</button>'
 						+ 		'</div>'
 						+ 	'</div>'
 						+ '</td>'
 					+ '</tr>';
         $('#tDataGrid').append(row);
 		});
-	}
-	SetGridClickEvents();
+	 SetGridClickEvents();
+    }
 	
 	
   

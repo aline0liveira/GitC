@@ -382,12 +382,13 @@
 	  
       <section class="content" style="margin-bottom:0px;padding-bottom:0px;min-height:0px;">
         <!-- Small boxes (Stat box) -->
-        <form  call="GetMethod" send-post="Generos" class="box box-primary  collapsed-box form-post"></form> 
+        <form  call="GetMethod" send-post="Generos" class="box box-primary  collapsed-box form-post"> 
           <div class="box-header with-border">
             <h3 class="box-title">Gêneros</h3>
 			
 			<div class="box-tools pull-right">
-				<button id="collapse-btn" type="button" class="btn btn-block btn-primary" data-widget="collapse"><i class="fa fa-plus"></i></button>
+        <button id="collapse-btn" type="button" class="btn btn-block btn-primary" data-widget="collapse"><i class="fa fa-plus"></i></button>
+        
 			</div>
           </div>
           <!-- hidden field -->
@@ -408,8 +409,8 @@
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
-              <button type="submit" id="btnSubmit" class="btn btn-primary">Finalizar cadastro</button>
-			  <button type="button" id="btnCancelar" class="btn btn-primary">Cancelar cadastro</button>
+              <button type="submit" id="btnSubmit" class="btn btn-primary">Finalizar</button>
+			        <button type="button"  class="btn btn-primary btn-cancel-form">Cancelar</button>
             </div>
           </div>
         </form>

@@ -414,14 +414,15 @@
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                              <label for="Editoras">Editoras</label>
-                              <input type="Text" class="form-control" name="Editoras" id="Editoras" placeholder="Editoras"/>
+                              <label for="Editora">Editoras</label>
+                              <select class="form-control select2" style="width: 100%;" name="Editora" id="Editora"></select>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
-                                    <label for="Generos">Generos</label>
-                                    <input type="Text" class="form-control" name="Generos" id="Generos" placeholder="Generos"/>
+                                    <label for="Genero">Generos</label>
+                                    <select class="form-control select2" style="width: 100%;" name="Genero" id="Genero"></select>
+                                      </div>
                                   </div>
                                 </div>
                     <div class="col-md-6">
@@ -439,8 +440,8 @@
                                 
             <!-- /.box-body -->
             <div class="box-footer">
-              <button type="submit" id="btnSubmit" class="btn btn-primary">Finalizar cadastro</button>
-			  <button type="button" id="btnCancelar" class="btn btn-primary">Cancelar cadastro</button>
+              <button type="submit" id="btnSubmit" class="btn btn-primary">Finalizar</button>
+			        <button type="button"  class="btn btn-primary btn-cancel-form">Cancelar</button>
             </div>
           </div>
         </form>
@@ -468,9 +469,11 @@
               <table id="tDataGrid" class="table table-hover">
                 <tr>
                   <th data-options="field:'Id',width:100">ID</th>
-                  <th>Registro</th>
-				        <th>Titulo</th>
+                 <th>Registro</th>
+				         <th>Titulo</th>
                  <th>Isbn</th>
+                 <th>Gêneros</th>
+                 <th>Editoras</th>
                  <th>Sinopse</th>
                  <th>Observacoes</th>
                 </tr>
