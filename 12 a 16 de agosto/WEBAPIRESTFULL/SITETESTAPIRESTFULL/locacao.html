@@ -389,7 +389,7 @@
 			<div class="box-tools pull-right">
 				<button id="collapse-btn" type="button" class="btn btn-block btn-primary" data-widget="collapse"><i class="fa fa-plus"></i></button>
 			</div>
-          </div>
+    </div>
           <!-- hidden field -->
 		  <input type="hidden" class="form-control" id="Id" name="Id" />
           <!-- form start -->
@@ -402,20 +402,20 @@
             </div>
             <div class="col-md-6">
 			  <div class="form-group">
-                <label for="Titulo">Devolução</label>
-                <input type="date" class="form-control" name="Devolução" id="Devolução" placeholder="Devolução"/>
+                <label for="Devolucao">Devolução</label>
+                <input type="date" class="form-control" name="Devolucao" id="Devolucao" placeholder="Devolucao"/>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                      <label for="Titulo">Livro</label>
-                      <input type="text" class="form-control" name="Livro" id="Livro" placeholder="Livro"/>
+                      <label for="Livro">Livro</label>
+                      <select class="form-control select2" style="width: 100%;" name="Livro" id="Livro"></select>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                            <label for="Titulo">Usuarios</label>
-                            <input type="text" class="form-control" name="Usuarios" id="Usuarios" placeholder="Usuarios"/>
+                            <label for="Usuario">Usuarios</label>
+                            <select class="form-control select2" style="width: 100%;" name="Usuario" id="Usuario"></select>
                           </div>
                         </div>
          
@@ -451,7 +451,9 @@
                 <tr>
                   <th data-options="field:'Id',width:100">ID</th>
                   <th>Tipo</th>
-			     <th>Devolução</th>
+               <th>Devolução</th>
+               <th>Livro</th>
+               <th>Usuarios</th>
                 </tr>
               </table>
             </div>
